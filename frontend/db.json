@@ -1,5 +1,55 @@
 {
-    "user":[],
-    "products":[],
-    "cart":[]
+    "user": [],
+    "products": [
+        {
+            "id": 1,
+            "title": "BALENCIAGA",
+             "image": "/products/balenPuma.jpeg",
+            "price": 5999,
+            "catogory":"Men"
+
+        },
+        {
+            "id": 2,
+            "title": "BOOTS",
+            "image": "/products/bootsdeigo.jpg",
+            "price": 3999
+        },
+        {
+            "id": 3,
+            "title": "HYDROS",
+           "image": "/products/Hydros.avif",
+            "price": 2599
+        },
+        {
+            "id": 4,
+            "title": "MULES",
+            "image": "/products/MochaMules.avif",
+            "price": 4299
+        },
+        {
+            "id": 5,
+            "title": "NIKE",
+           "image": "/products/nike_b_2.jpeg",
+            "price": 4599
+        },
+        {
+            "id": 6,
+            "title": "TIGER",
+           "image": "/products/panda_3.jpeg",
+            "price": 3899
+        },
+        {
+            "id": 7,
+            "title": "PUMA",
+            "image": "/products/puma1.jpg",
+            "price": 4199
+        },{
+            "id": 8,
+            "title": "NIKE",
+            "image": "/products/nike_red.jpeg",
+            "price": 4199
+        }
+    ],
+    "cart": []
 }
