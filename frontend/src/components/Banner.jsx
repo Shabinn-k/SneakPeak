@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import img1 from "./../assets/banner1.jpg"
-import img2 from "./../assets/banner2.jpg";
-import img3 from "./../assets/banner3.jpg";
-import img4 from "./../assets/banner4.jpg";
+import ban1 from "./../assets/ban1.jpg"
+import ban2 from "./../assets/ban2.jpg";
+import ban3 from "./../assets/ban3.jpg";
+import ban4 from "./../assets/ban4.png";
 import "./Banner.css";
 
 const Banner = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const bannerImages = [img1, img2, img3, img4];
+    const bannerImages = [ban1, ban2, ban3, ban4];
 
     useEffect(() => {
         const interval = setInterval(() => {

@@ -1,50 +1,58 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { api } from '../../api/Axios';
-import "./TopSelling.css"
+import "./TopSelling.css";
+import { FaShoppingCart, FaHeart } from "react-icons/fa";
+import { CartContext } from '../../context/CartContext';
 
 const TopSelling = () => {
     const [prod, setProd] = useState([]);
-
+    const {addToCart} = useContext(CartContext);
     useEffect(() => {
         api.get("/products")
             .then(res => setProd(res.data))
-            .catch((err) => console.log(err))
-    }, [])
-    console.log(prod);
-
+            .catch(err => console.log(err));
+    }, []);
 
     return (
         <div>
-            <h1>Our Top Selling Products :-</h1>
             <br />
+            <h1>Our New Collections :-</h1>
+
             <div className="group-1">
-                {prod.slice(0, 4)
-                    .map((item) => (
-                        <div key={item.id}>
-                            <img src={item.image} alt={item.title} width={150} />
-                            <h3>{item.title}</h3>
-                            <p>{item.catogory}</p>
-                            <span>{item.price}</span>
+                {prod.slice(0, 4).map((item) => (
+                    <div key={item.id} className="card">
+                      
+                        <img src={item.image} alt={item.title} />
+                        <h3>{item.title}</h3>
+                         <div className="card-icons">
+                            <FaHeart className="wish-icon" />
+                            <FaShoppingCart className="cart-icon" onClick={()=>addToCart(item)}/>
                         </div>
-                    ))}
+                        <h2>{item.name}</h2>
+                        <p>{item.catogory}</p>
+                        <span>₹ {item.price}</span>
+                         
+                    </div>
+                ))}
             </div>
 
             <div className="group-2">
-                {prod.slice(4, 8)
-                    .map((item) => (
-                        <div key={item.id}>
-                            <img src={item.image} alt={item.title} width={150} />
-                            <h3>{item.title}</h3>
-                            <h2>{item.name}</h2>
-                            <p>{item.catogory}</p>
-                            <span>{item.price}</span>
+                {prod.slice(4, 8).map((item) => (
+                    <div key={item.id} className="card">
+                        <img src={item.image} alt={item.title} />
+                        <h3>{item.title}</h3>
+                         <div className="card-icons">
+                            <FaHeart className="wish-icon"/>
+                            <FaShoppingCart className="cart-icon" onClick={()=>addToCart(item)}/>
                         </div>
-                    ))}
+                        <h2>{item.name}</h2>
+                        <p>{item.catogory}</p>
+                        <span>₹ {item.price}</span>
+                    </div>
+                ))}
             </div>
         </div>
     )
 }
 
-
-export default TopSelling
+export default TopSelling;
