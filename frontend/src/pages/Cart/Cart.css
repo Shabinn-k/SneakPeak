@@ -1,0 +1,134 @@
+/* Page layout */
+.cart-page {
+  padding: 40px;
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Header */
+.cart-header {
+  margin-bottom: 30px;
+}
+
+.home-btn {
+  background: #4a90e2;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.home-btn:hover {
+  background: #3577c6;
+}
+
+/* Empty message */
+.empty-msg {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 22px;
+  color: #777;
+}
+
+/* Cart item card */
+.cart-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 14px;
+    box-shadow: 0 2px 10px bisque;
+  transition: 0.3s ease;
+}
+
+.cart-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 6px 32px rgba(245, 222, 179, 0.75);
+}
+
+/* Product image */
+.cart-card img {
+  width: 150px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Text section */
+.cart-info {
+  margin-left: 20px;
+  flex: 1;
+}
+
+.cart-info h3 {
+  font-size: 20px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.cart-info h4 {
+  font-size: 16px;
+  color: #5a5a5a;
+}
+
+.cart-info p {
+  color: #777;
+  margin: 5px 0;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2d2d2d;
+}
+
+/* Remove button */
+.remove-btn {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: bold;
+}
+
+.remove-btn:hover {
+  background: #c52330;
+}/* Quantity control container */
+.cart-last {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Minus & Plus buttons */
+.cart-last button {
+  padding: 8px 14px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(244, 220, 191);
+  transition: 0.3s ease;
+  margin-right: 8px;
+}
+
+.cart-last button:hover {
+  background-color: burlywood;
+}
+
+/* Quantity number */
+.cart-last h4 {
+  font-size: 20px;
+  margin: 0 8px;
+  font-weight: bold;
+}
+

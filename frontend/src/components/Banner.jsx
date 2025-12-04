@@ -7,7 +7,7 @@ import "./Banner.css";
 
 const Banner = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const bannerImages = [ban1, ban2, ban3, ban4];
+    const bannerImages = [ban4,ban1, ban2, ban3];
 
     useEffect(() => {
         const interval = setInterval(() => {

@@ -2,7 +2,7 @@
   "user": [],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "title": "ZARA",
       "name": "short | minim | veniam",
       "image": "/products/top1.webp",
@@ -10,7 +10,7 @@
       "catogory": "women"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "SWEATER",
       "name": "blue | fugi | quis ",
       "image": "/products/blue.jpeg",
@@ -18,7 +18,7 @@
       "catogory": "women"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "FULL KURTA",
       "name": "flare | black | eiusmod",
       "image": "/products/top2.webp",
@@ -26,7 +26,7 @@
       "catogory": "women"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "SET MUNDU",
       "name": "green | mundu | elit",
       "image": "/products/greenSari.jpeg",
@@ -34,7 +34,7 @@
       "catogory": "women"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "KURTA",
       "name": "Duis | aute | culpa",
       "image": "/products/top3.webp",
@@ -42,7 +42,7 @@
       "catogory": "women"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "LORUM",
       "name": "blue | ipsum | dolor",
       "image": "/products/shawlBl.jpeg",
@@ -50,7 +50,7 @@
       "catogory": "women"
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "CLOUD VASTRA",
       "name": "solid | plain | black",
       "image": "/products/top4.webp",
@@ -58,7 +58,7 @@
       "catogory": "women"
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "THEYYAM MUND",
       "name": "red | mundu | labore",
       "image": "/products/theyyam_dr.jpeg",
@@ -66,31 +66,15 @@
       "catogory": "women"
     }
   ],
-  "cart": [
+  "cart": [],
+  "wishlist": [
     {
-      "id": 1,
-      "title": "ZARA",
-      "name": "short | minim | veniam",
-      "image": "/products/top1.webp",
-      "price": 2999,
-      "catogory": "women"
-    },
-    {
-      "id": 2,
-      "title": "SWEATER",
-      "name": "blue | fugi | quis ",
-      "image": "/products/blue.jpeg",
-      "price": 3599,
-      "catogory": "women"
-    },
-    {
-      "id": 3,
+      "id": "3",
       "title": "FULL KURTA",
       "name": "flare | black | eiusmod",
       "image": "/products/top2.webp",
       "price": 2599,
       "catogory": "women"
     }
-  ],
-  "wishlist": []
+  ]
 }

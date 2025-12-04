@@ -6,7 +6,7 @@ import { CartContext } from '../../context/CartContext';
 
 const TopSelling = () => {
     const [prod, setProd] = useState([]);
-    const {addToCart} = useContext(CartContext);
+    const {addToCart,addToWish} = useContext(CartContext);
     useEffect(() => {
         api.get("/products")
             .then(res => setProd(res.data))
@@ -25,7 +25,7 @@ const TopSelling = () => {
                         <img src={item.image} alt={item.title} />
                         <h3>{item.title}</h3>
                          <div className="card-icons">
-                            <FaHeart className="wish-icon" />
+                            <FaHeart className="wish-icon" onClick={()=>addToWish(item)}/>
                             <FaShoppingCart className="cart-icon" onClick={()=>addToCart(item)}/>
                         </div>
                         <h2>{item.name}</h2>
@@ -42,7 +42,7 @@ const TopSelling = () => {
                         <img src={item.image} alt={item.title} />
                         <h3>{item.title}</h3>
                          <div className="card-icons">
-                            <FaHeart className="wish-icon"/>
+                            <FaHeart className="wish-icon" onClick={()=>addToWish(item)}/>
                             <FaShoppingCart className="cart-icon" onClick={()=>addToCart(item)}/>
                         </div>
                         <h2>{item.name}</h2>
