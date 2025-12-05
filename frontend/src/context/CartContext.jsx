@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
+import { useMemo,useCallback } from 'react';
 import { createContext } from 'react'
 import { api } from '../api/Axios';
+import Wishlist from '../pages/Wishlist/Wishlist';
 
 export const CartContext = createContext(null);
 
 const CartContextProvider=(props)=>{
         const [cartItems,setCartItems]=useState([]);
         const [wishItems,setWishItems]=useState([])
+        const [loading,setLoading] = useState({cart:false, Wishlist:false})
 
         //loading cart & wishlist from db when app start
         useEffect(()=>{
@@ -26,8 +29,8 @@ const CartContextProvider=(props)=>{
             if(exist){
                const newQty= exist.quantity+(item.quantity || 1);
                     if(newQty<=0){
-                        removeCart(item.    id)
-                setCartItems(prev=>prev.filter(item=>item.id !== id))
+                setCartItems(prev=>prev.filter(c=>c.id !== item.id))
+                await api.delete(`/cart/${item.id}`)
                 return;
                     }
                     const updated=cartItems.map(
@@ -43,12 +46,10 @@ const CartContextProvider=(props)=>{
     };
 
         const removeCart=async(id)=>{
-            try {
+          
                 await api.delete(`/cart/${id}`)
                 setCartItems(prev=>prev.filter(item=>item.id !== id))
-            } catch (err) {
-                console.log(err);
-            }
+           
         };
 
         const addToWish=async (item)=>{

@@ -14,8 +14,8 @@ const Footer = () => {
                     <p>
                         Sootika is a celebration of timeless elegance, bringing together
                         the rich traditions of women’s ethnic fashion with modern comfort.
-                        <b> We believe every woman deserves to feel graceful and confident.</b>
-                        Our curated collection includes sarees, kurtis, lehengas, and more—
+                        <b> We believe every woman deserves to feel graceful and confident. </b>
+                        Our curated collection includes sarees, kurtis, lehengas, and more
                         crafted with detail, beauty, and cultural pride.
                     </p>
 

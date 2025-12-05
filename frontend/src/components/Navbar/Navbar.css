@@ -1,35 +1,41 @@
+/* NAVBAR MAIN */
 .navbar {
     width: 100%;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fffaf0;           /* Soft beige */
+    padding: 0 25px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    height: 70px;
-    z-index: 100;
-    background: white;
-    padding: 0 20px;
-    box-shadow: 0 2px 10px bisque;
+
+    box-shadow: 0 2px 8px rgba(210, 180, 140, 0.4);
 }
 
+/* LOGO */
 .title {
-    width: 120px;
+    width: 130px;
 }
 
+/* LINKS */
 .links {
     display: flex;
     gap: 25px;
 }
 
 .link-items {
-    position: relative;
-    padding: 2px 0;
     font-size: 18px;
+    color: #4b3b2b;                /* Dark beige brown */
     text-decoration: none;
-    color: black;
-    cursor: pointer;
+    position: relative;
+    padding: 3px 0;
+    font-weight: 500;
 }
 
+/* BEAUTIFUL DOUBLE-LINE HOVER */
 .link-items::before,
 .link-items::after {
     content: "";
@@ -37,9 +43,9 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background: black;
+    background: #a07855;           /* Warm brown */
     transform: scaleX(0);
-    transition: transform 0.3s ease;
+    transition: 0.35s ease;
 }
 
 .link-items::before {
@@ -56,24 +62,87 @@
     transform: scaleX(1);
 }
 
+/* RIGHT SIDE (FUNCTIONAL ICONS + USER) */
 .fnction {
     display: flex;
-    gap: 15px;
+    align-items: center;           /* FIX — alignment */
+    gap: 18px;
+}
+
+/* ICONS */
+.navbar-search-icon {
+    position: relative;
+}
+
+.navbar-search-icon img {
+    display: block;                /* FIX — removes baseline shift */
+}
+
+/* COUNT BADGE */
+.dot {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: #c29054;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+    padding: 8px 16px;
+    background: #f3e5c3;           /* Beige button */
+    border-radius: 12px;
+    border: 1px solid #d4b48c;
+    font-weight: bold;
     cursor: pointer;
 }
 
+.login-btn:hover {
+    background: #e8d6b5;
+}
+
+/* USER BOX */
+.user-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: #fff3dd;           /* Light beige */
+    padding: 6px 14px;
+    border-radius: 12px;
+    border: 1px solid #e2c9a8;
+}
+
+.username {
+    font-weight: bold;
+    color: #4b3b2b;
+}
+
+.logout-btn {
+    padding: 6px 12px;
+    border: none;
+    background: #d9534f;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #c9302c;
+}
+
+/* MOBILE */
 .mobile-menu-btn {
     display: none;
 }
 
+/* MOBILE DROPDOWN */
 .mobile-links {
     display: none;
-}
-
-@media (max-width: 900px) {
-    .links {
-        gap: 15px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -85,21 +154,21 @@
 
     .mobile-menu-btn {
         display: block;
-        font-size: 28px;
+        font-size: 30px;
         cursor: pointer;
     }
 
     .mobile-links {
         display: flex;
         flex-direction: column;
-        gap: 18px;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        background: white;
+        background: #fffaf0;
         padding: 20px;
-        box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
-        z-index: 99;
+        gap: 18px;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        z-index: 999;
     }
 }

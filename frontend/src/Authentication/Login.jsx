@@ -1,42 +1,32 @@
-import React from 'react'
-import { useFormik } from 'formik';
-import { signUpValidation } from './AuthContext';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import "./Login.css";
 
+const Login = ({setShowLogin}) => {
+    const [currentState,setCurrentState] = useState("Sign In")
+    const navigate=useNavigate()
+  return (
+    <div className='login-popup'>
+        <form className='login-popup-container'>
+            <div className="login-poup-title">
+                <h2 className='font-extrabold text-4xl'>Sign In</h2>
+                <h2 onClick={()=>setShowLogin(false)} className='close-btn  font-bold text-2xl'>X</h2>
+            </div>
+            <div className="login-popup-inputs">
+              {currentState ==="Login"?<></>:<div onClick={()=>navigate("/registration")} ></div>}
+              <input type="email" placeholder='E-mail' required autoComplete='username'/>
+              <input type="password" placeholder='* * * * * * * *' required autoComplete='current-password'/>
+            </div>
+            <button type='submit'>Login</button>
 
-const initialValue = {
-    email: "",
-    password: ""
-}
-const Login = () => {
-
-    const { values, handleBlur, handleChange, handleSubmit, errors } = useFormik({
-        initialValues: initialValue,
-        validationSchema: signUpValidation,
-        onSubmit: (values) => {
-            console.log(values)
-        }
-    })
-
-    return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <br /><input type="email" name='email'
-                    placeholder='E-mail' required value={values.email}
-                    onBlur={handleBlur} onChange={handleChange}
-                /><br />
-                {errors.email && <small>{errors.email}</small>}
-                <br /> <input type="password" name='password' placeholder=' * * * * * * * * '
-                    value={values.password} required
-                    onBlur={handleBlur} onChange={handleChange}
-
-                /><br />
-                {errors.password && <small>{errors.password}</small>}
-             <br />  <button>Login</button><br/>
-                    <span>Dont have an accoount ? <Link to="/registration">click here</Link></span>
-            </form>
-        </div>
-    )
-}
+            <div className="login-popup-condition">
+              <input type="checkbox" required/>
+              <p>By continuing , i agree to the terms of use & privacy policy.</p>
+            </div>
+        <p>Create a new account ? <span onClick={()=> navigate("/registration")}>Click here</span></p>
+        </form>
+    </div>
+  )
+}  
 
 export default Login

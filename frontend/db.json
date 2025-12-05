@@ -1,5 +1,5 @@
 {
-  "user": [],
+  "users": [],
   "products": [
     {
       "id": "1",
@@ -67,14 +67,5 @@
     }
   ],
   "cart": [],
-  "wishlist": [
-    {
-      "id": "3",
-      "title": "FULL KURTA",
-      "name": "flare | black | eiusmod",
-      "image": "/products/top2.webp",
-      "price": 2599,
-      "catogory": "women"
-    }
-  ]
+  "wishlist": []
 }

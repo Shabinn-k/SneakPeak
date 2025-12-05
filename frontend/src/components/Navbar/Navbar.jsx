@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import image from "../../assets/Image";
+import { CartContext } from "../../context/CartContext";
+import { useAuth } from "../../Authentication/AuthContext";
 
-const Navbar = () => {
+const Navbar = ({setShowLogin}) => {
+  const {user,logout} =useAuth();
+  const {cartItems,wishItems}=useContext(CartContext);
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
@@ -20,11 +24,14 @@ const Navbar = () => {
         </div>
 
         <div className="fnction">
-          <Link to="/wishlist"><img src={image.wish} alt="wishlist" width={25} /></Link>
-          <Link to="/cart"><img src={image.cart} alt="cart" width={25} /></Link>
-          <Link to="/login">
-            <button>Sign In</button>
-          </Link>
+          <Link to="/wishlist" className="navbar-search-icon"><img src={image.hrt} alt="wishlist" width={25} />{wishItems.length > 0 && (<div className="dot">{wishItems.length}</div>)}</Link>
+          <Link to="/cart" className="navbar-search-icon"><img src={image.cart} alt="cart" width={25} />{cartItems.length > 0 &&(<div className="dot">{cartItems.length}</div>)}</Link>
+          {user?(<div className="user-box"><span className="username">Hy, {user.name}</span><button className="logout-btn" onClick={logout}>Logout</button></div>):
+          (
+
+            <button className="rounded-2xl p-3 w-17 h-7 hover:bg-amber-200" onClick={()=>setShowLogin(true)}>Sign In</button>
+          )}
+         
         </div>
 
         <div
@@ -35,18 +42,21 @@ const Navbar = () => {
         </div>
       </div>
 
-      {openMenu && (
+       {openMenu && (
         <div className="mobile-links">
-          <Link to="/" className="link-items" onClick={() => setOpenMenu(false)}>Home</Link>
-          <Link to="/shop" className="link-items" onClick={() => setOpenMenu(false)}>Shop</Link>
-          <Link to="/brands" className="link-items" onClick={() => setOpenMenu(false)}>Brands</Link>
-          <Link to="/catogories" className="link-items" onClick={() => setOpenMenu(false)}>Category</Link>
-
+          <Link to="/" onClick={() => setOpenMenu(false)}>Home</Link>
+          <Link to="/shop" onClick={() => setOpenMenu(false)}>Shop</Link>
+          <Link to="/brands" onClick={() => setOpenMenu(false)}>Brands</Link>
+          <Link to="/catogories" onClick={() => setOpenMenu(false)}>Category</Link>
           <hr />
-
           <Link to="/wishlist" onClick={() => setOpenMenu(false)}>Wishlist</Link>
           <Link to="/cart" onClick={() => setOpenMenu(false)}>Cart</Link>
-          <Link to="/login" onClick={() => setOpenMenu(false)}>Sign In</Link>
+
+          {user ? (
+            <button onClick={() => { logout(); setOpenMenu(false); }} className="logout-btn">Logout</button>
+          ) : (
+            <button onClick={() => {setShowLogin(true);setOpenMenu(false)}} className="login-btn">Sign In</button>
+          )}
         </div>
       )}
     </>

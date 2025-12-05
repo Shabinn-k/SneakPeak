@@ -1,0 +1,80 @@
+/* Full page center */
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f5e9d6; /* Beige */
+}
+
+/* Card */
+.register-card {
+  width: 380px;
+  background: #fff7ec; /* Light beige card */
+  padding: 35px 40px;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  text-align: center;
+  border: 1px solid #e6d5bd;
+}
+
+.register-card h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #4b3a26;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #7a6a57;
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+.input-group {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #d7c3a5; /* Soft brown border */
+  background: #fffdf8;
+  font-size: 15px;
+  color: #4b3a26;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #8a5a30; /* Brown highlight */
+  box-shadow: 0 0 5px rgba(138, 90, 48, 0.3);
+}
+
+.input-group small {
+  color: red;
+  font-size: 12px;
+}
+
+/* Button */
+.register-btn {
+  width: 100%;
+  padding: 13px;
+  background: #8a5a30; /* Main brown */
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.register-btn:hover {
+  background: #6f4726; /* Darker brown */
+}

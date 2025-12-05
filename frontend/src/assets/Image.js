@@ -4,7 +4,7 @@ import logo from "./logo.png";
 import instagram from "./insta.png";
 import facebook from "./fb.png";
 import linked from "./linked.png";
-
+import hrt from "./hrt.png";
 
 //Top Selling
 
@@ -16,6 +16,7 @@ import linked from "./linked.png";
         instagram,
         facebook,
         linked,
+        hrt,
         // balenPuma,
         // boots ,
         // hydros ,

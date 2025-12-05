@@ -1,134 +1,168 @@
-/* Page layout */
+/* Entire Cart Page */
 .cart-page {
-  padding: 40px;
   width: 90%;
   max-width: 1100px;
   margin: auto;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
 }
 
-/* Header */
-.cart-header {
-  margin-bottom: 30px;
+/* Empty message container */
+.empty-msg-container {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.empty-msg-container h2 {
+  font-size: 26px;
+  color: #444;
+  margin-bottom: 20px;
 }
 
 .home-btn {
   background: #4a90e2;
-  padding: 8px 20px;
+  padding: 10px 25px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  cursor: pointer;
   color: white;
   font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.2s;
 }
 
 .home-btn:hover {
-  background: #3577c6;
+  background: #357bd8;
 }
 
-/* Empty message */
-.empty-msg {
+
+/* Cart heading */
+.text-center {
   text-align: center;
-  margin-top: 40px;
-  font-size: 22px;
-  color: #777;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #333;
 }
 
-/* Cart item card */
+/* Cart card */
 .cart-card {
   display: flex;
   align-items: center;
-  background: white;
-  padding: 15px;
-  margin: 15px 0;
-  border-radius: 14px;
-    box-shadow: 0 2px 10px bisque;
-  transition: 0.3s ease;
+  gap: 25px;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 12px;
+  background: #f8f9fa;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: 0.3s;
 }
 
 .cart-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0px 6px 32px rgba(245, 222, 179, 0.75);
+  transform: translateY(-3px);
+       box-shadow: 0px 6px 32px rgba(245, 222, 179, 0.63);
 }
 
-/* Product image */
-.cart-card img {
-  width: 150px;
-  height: 130px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* Text section */
+/* Product info */
 .cart-info {
-  margin-left: 20px;
   flex: 1;
 }
 
 .cart-info h3 {
   font-size: 20px;
   margin: 5px 0;
-  font-weight: bold;
+  color: #222;
 }
 
-.cart-info h4 {
+.cart-info h2 {
   font-size: 16px;
-  color: #5a5a5a;
+  color: #666;
 }
 
 .cart-info p {
-  color: #777;
   margin: 5px 0;
+  color: #777;
 }
 
-.price {
-  font-size: 20px;
-  font-weight: bold;
-  color: #2d2d2d;
-}
-
-/* Remove button */
-.remove-btn {
-  background: #e63946;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.2s;
+.cart-info span {
+  font-size: 18px;
+  color: #000;
   font-weight: bold;
 }
 
-.remove-btn:hover {
-  background: #c52330;
-}/* Quantity control container */
+/* Quantity Section */
 .cart-last {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
-/* Minus & Plus buttons */
 .cart-last button {
-  padding: 8px 14px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
+  width: 35px;
+  height: 35px;
   border: none;
   border-radius: 8px;
-  background-color: rgb(244, 220, 191);
-  transition: 0.3s ease;
-  margin-right: 8px;
+  background: #e6e6e6;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
 }
 
 .cart-last button:hover {
-  background-color: burlywood;
+  background: #cfcfcf;
 }
 
-/* Quantity number */
 .cart-last h4 {
-  font-size: 20px;
-  margin: 0 8px;
-  font-weight: bold;
+  font-size: 18px;
+  width: 30px;
+  text-align: center;
+  color: #333;
 }
 
+/* Remove Button */
+.remove-btn {
+  background: #e20b0b;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.remove-btn:hover {
+  background: #e84343;
+}
+.home-btN {
+       margin: 35px auto;
+       padding: 10px 22px;
+       background-color: #4a90e2;
+       color: #fff;
+       border: none;
+       border-radius: 8px;
+       cursor: pointer;
+       transition: .25s ease;
+       display: block;
+   }
+
+   .home-btN:hover {
+       background-color: #357ab8;
+   }
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cart-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cart-last {
+    justify-content: center;
+  }
+
+  .remove-btn {
+    margin-top: 10px;
+  }
+}
