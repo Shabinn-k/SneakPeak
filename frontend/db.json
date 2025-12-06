@@ -1,10 +1,28 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": "ec50",
+      "name": "messi",
+      "number": 1234567890,
+      "email": "neymar@gmail.com",
+      "password": "neymar123",
+      "cpass": "neymar123"
+    },
+    {
+      "id": "e6e0",
+      "name": "hanan",
+      "number": 9876543210,
+      "email": "hanan@gmail.com",
+      "password": "12345678",
+      "cpass": "12345678"
+    }
+  ],
   "products": [
     {
       "id": "1",
       "title": "ZARA",
       "name": "short | minim | veniam",
+      "description": "A minimal and stylish top with a clean design, perfect for effortless everyday wear.",
       "image": "/products/top1.webp",
       "price": 2999,
       "catogory": "women"
@@ -12,7 +30,8 @@
     {
       "id": "2",
       "title": "SWEATER",
-      "name": "blue | fugi | quis ",
+      "name": "blue | fugi | quis",
+      "description": "A cozy blue sweater with soft texture and a comfortable fit, ideal for cool days.",
       "image": "/products/blue.jpeg",
       "price": 3599,
       "catogory": "women"
@@ -21,6 +40,7 @@
       "id": "3",
       "title": "FULL KURTA",
       "name": "flare | black | eiusmod",
+      "description": "A graceful flared kurta in elegant black, suitable for festive and casual wear.",
       "image": "/products/top2.webp",
       "price": 2599,
       "catogory": "women"
@@ -29,6 +49,7 @@
       "id": "4",
       "title": "SET MUNDU",
       "name": "green | mundu | elit",
+      "description": "A traditional green set mundu with a soft feel, perfect for cultural and festive occasions.",
       "image": "/products/greenSari.jpeg",
       "price": 1099,
       "catogory": "women"
@@ -37,6 +58,7 @@
       "id": "5",
       "title": "KURTA",
       "name": "Duis | aute | culpa",
+      "description": "A stylish kurta with a smooth finish and versatile design for everyday comfort.",
       "image": "/products/top3.webp",
       "price": 2599,
       "catogory": "women"
@@ -45,6 +67,7 @@
       "id": "6",
       "title": "LORUM",
       "name": "blue | ipsum | dolor",
+      "description": "A premium blue top/shawl with a lightweight feel, perfect for layering in style.",
       "image": "/products/shawlBl.jpeg",
       "price": 1499,
       "catogory": "women"
@@ -53,6 +76,7 @@
       "id": "7",
       "title": "CLOUD VASTRA",
       "name": "solid | plain | black",
+      "description": "A soft, plain black top with a sleek minimal look, designed for modern everyday fashion.",
       "image": "/products/top4.webp",
       "price": 2299,
       "catogory": "women"
@@ -61,6 +85,7 @@
       "id": "8",
       "title": "THEYYAM MUND",
       "name": "red | mundu | labore",
+      "description": "A vibrant red Theyyam-inspired mundu with a bold cultural aesthetic.",
       "image": "/products/theyyam_dr.jpeg",
       "price": 1499,
       "catogory": "women"

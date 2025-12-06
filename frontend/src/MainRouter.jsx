@@ -5,6 +5,7 @@ import NotFound from './pages/NotFound'
 import Registration from './pages/Registration.jsx'
 import Footer from './components/Footer'
 import Shop from './pages/shop/Shop'
+import About from './pages/About.jsx'
 
 
 const Cart = lazy(() => import("./pages/Cart/Cart.jsx"));
@@ -24,6 +25,7 @@ const MainRouter = () => {
           <Route path='/shop' element={<Shop />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/wishlist' element={<Wishlist />} />
+          <Route path='/about' element={<About/>}/>
           <Route path='*' element={<NotFound />} />
 
         </Routes>

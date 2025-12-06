@@ -24,7 +24,7 @@ const Registration = () => {
             console.log(values);
 
             if (succes){
-                navigate("/home");
+                navigate("/");
             }
         }
     });
@@ -65,7 +65,10 @@ const Registration = () => {
             <input type="password" name="cpass" placeholder="Confirm Password" required
             value={values.cpass} onChange={handleChange} onBlur={handleBlur} autoComplete="new-password"/>
         </div>
-
+            <div className="login-popup-condition">
+          <input type="checkbox" required />
+          <p>By continuing, I agree to the terms of use & privacy policy.</p>
+        </div>
         <button type="submit" className="register-btn">Create Account</button>
       </form>
     </div>

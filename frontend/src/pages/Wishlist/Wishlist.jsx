@@ -22,7 +22,7 @@ const Wishlist = () => {
                     <p>{item.catogory}</p>
                     <span>₹ {item.price}</span>
                 </div>
-                <div className="tocart"><button onClick={()=>addToCart(item)}>ADD TO CART</button></div>
+                <div className="tocart"><button onClick={()=>{addToCart(item);removeWish(item.id)}}>ADD TO CART</button></div>
                 <div className="remove" onClick={()=>removeWish(item.id)}>REMOVE</div>
             </div>
             

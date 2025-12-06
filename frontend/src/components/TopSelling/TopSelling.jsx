@@ -3,15 +3,37 @@ import { api } from '../../api/Axios';
 import "./TopSelling.css";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { CartContext } from '../../context/CartContext';
+import { useAuth } from '../../Authentication/AuthContext';
+import { toast } from 'react-toastify';
 
-const TopSelling = () => {
+const TopSelling = ({ setShowLogin }) => {
+    const { user } = useAuth();
     const [prod, setProd] = useState([]);
-    const {addToCart,addToWish} = useContext(CartContext);
+    const { addToCart, addToWish } = useContext(CartContext);
+
     useEffect(() => {
         api.get("/products")
             .then(res => setProd(res.data))
             .catch(err => console.log(err));
     }, []);
+
+    const handleCart = () => {
+        if (!user) {
+            setShowLogin(true);
+            toast.warn("Please login to view Cart!");
+            return false;
+        }
+        return true;
+    };
+
+    const handleWish = () => {
+        if (!user) {
+            setShowLogin(true);
+            toast.warn("Please login to view Wishlist!");
+            return false;
+        }
+        return true;
+    };
 
     return (
         <div>
@@ -21,17 +43,21 @@ const TopSelling = () => {
             <div className="group-1">
                 {prod.slice(0, 4).map((item) => (
                     <div key={item.id} className="card">
-                      
                         <img src={item.image} alt={item.title} />
                         <h3>{item.title}</h3>
-                         <div className="card-icons">
-                            <FaHeart className="wish-icon" onClick={()=>addToWish(item)}/>
-                            <FaShoppingCart className="cart-icon" onClick={()=>addToCart(item)}/>
+                        <div className="card-icons">
+                            <FaHeart
+                                className="wish-icon"
+                                onClick={() => { if (handleWish()) addToWish(item); }}
+                            />
+                            <FaShoppingCart
+                                className="cart-icon"
+                                onClick={() => { if (handleCart()) addToCart(item); }}
+                            />
                         </div>
                         <h2>{item.name}</h2>
                         <p>{item.catogory}</p>
                         <span>₹ {item.price}</span>
-                         
                     </div>
                 ))}
             </div>
@@ -41,9 +67,15 @@ const TopSelling = () => {
                     <div key={item.id} className="card">
                         <img src={item.image} alt={item.title} />
                         <h3>{item.title}</h3>
-                         <div className="card-icons">
-                            <FaHeart className="wish-icon" onClick={()=>addToWish(item)}/>
-                            <FaShoppingCart className="cart-icon" onClick={()=>addToCart(item)}/>
+                        <div className="card-icons">
+                            <FaHeart
+                                className="wish-icon"
+                                onClick={() => { if (handleWish()) addToWish(item); }}
+                            />
+                            <FaShoppingCart
+                                className="cart-icon"
+                                onClick={() => { if (handleCart()) addToCart(item); }}
+                            />
                         </div>
                         <h2>{item.name}</h2>
                         <p>{item.catogory}</p>

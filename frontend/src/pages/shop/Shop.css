@@ -1,0 +1,149 @@
+/* Overall Page */
+.shop-page {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 0;
+  font-family: "Poppins", sans-serif;
+  color: #3c3c3c;
+}
+
+/* Back to home */
+.back-home {
+  color: #b48b57; /* soft caramel brown */
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  width: fit-content;
+}
+
+/* Search bar */
+.shop-page input[type="search"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e4d8c8; /* beige border */
+  background: #faf5ee;       /* soft subtle beige */
+  border-radius: 12px;
+  outline: none;
+  font-size: 15px;
+  margin: 15px 0 25px 0;
+  transition: 0.2s ease-in-out;
+}
+
+.shop-page input[type="search"]:focus {
+  border-color: #c9a47a;
+  box-shadow: 0 0 8px rgba(201, 164, 122, 0.4);
+}
+
+/* Products Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+/* Product Card */
+.product-card {
+    position: relative;
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid #f0e6d8; /* light beige border */
+  box-shadow: 0px 4px 14px rgba(219, 195, 168, 0.25);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 22px rgba(201, 164, 122, 0.25);
+}
+/* Wishlist Icon */
+.wishlist-icon {
+  position: absolute;
+  top: 24px;
+  right: 22px;
+  font-size: 22px;
+  color: wheat;/* beige gold */
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+  z-index: 10;
+}
+
+.wishlist-icon:hover {
+  transform: scale(1.2);
+  color: #d79635;
+}
+
+/* IMAGE WRAPPER */
+.image-box {
+  width: 100%;
+  height: 190px;
+  border-radius: 12px;
+  overflow: hidden;       /* for zoom effect */
+  margin-bottom: 10px;
+}
+
+/* IMG INSIDE */
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* fills card perfectly */
+  transition: transform 0.35s ease;
+}
+
+/* Hover Image Zoom */
+.product-card:hover .image-box img {
+  transform: scale(1.15);
+}
+
+/* Title + Name */
+.product-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4f4f4f;
+  margin: 5px 0;
+}
+
+.product-card .name {
+  font-size: 14px;
+  color: #7d7d7d;
+  margin-bottom: 8px;
+}
+
+/* Price */
+.price {
+  display: block;
+  font-weight: 700;
+  font-size: 18px;
+  color: #3f3f3f;
+  margin-bottom: 15px;
+}
+
+/* Add to Cart Button */
+.addCart {
+  background: #c9a47a; /* warm beige gold */
+  color: white;
+  border: none;
+  padding: 10px 0;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.addCart:hover {
+  background: #b58c64;
+}
+
+/* No product message */
+.noProduct {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 18px;
+  color: #a39a8c;
+  padding: 20px;
+}

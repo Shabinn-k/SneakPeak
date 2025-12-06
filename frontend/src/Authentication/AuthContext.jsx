@@ -1,7 +1,6 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState,useContext } from "react";
 import { api } from "../api/Axios";
 import { toast } from "react-toastify";
-import { useContext } from "react";
 
 const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
@@ -79,7 +78,7 @@ export const AuthProvider = (props) => {
         loading,
         login,
         logout,
-        signup
+        signup,
     }
 
     return (
