@@ -14,7 +14,7 @@ const Wishlist = lazy(() => import("./pages/Wishlist/Wishlist.jsx"))
 const MainRouter = () => {
 
   const location = useLocation();
-  const hideFoot = ["/shop", "/cart", "/wishlist"].includes(location.pathname);
+  const hideFoot = ["/shop", "/cart", "/wishlist","/about"].includes(location.pathname);
 
   return (
     <>

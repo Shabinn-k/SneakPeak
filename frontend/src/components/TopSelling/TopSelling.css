@@ -89,22 +89,15 @@ h1{
     font-size: 18px;
     color: #474040;
 }
-
-/* Responsive - 2 cards per row */
-@media (max-width: 992px) {
-    .card {
-        width: 45%;
+/* 2 cards per row on mobile screens */
+@media (max-width: 600px) {
+    .group-1, .group-2 {
+        justify-content: center;
+        gap: 15px;
     }
-}
 
-@media (max-width: 768px) {
     .card {
-        width: 48%;
-    }
-}
-
-@media (max-width: 500px) {
-    .card {
-        width: 48%;
+        width: 46% !important;   /* 2 cards per row */
+        margin: 0 auto;
     }
 }

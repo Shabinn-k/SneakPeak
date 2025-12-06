@@ -4,7 +4,24 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #f5e9d6; /* Beige */
+
+  background: url("../assets/regBan.jpg");
+  background-size: cover;       /* make image fully cover the screen */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;           /* required for blur overlay */
+}
+
+/* Blur + dim overlay */
+.register-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  backdrop-filter: blur(3px);     /* main blur */
+  background: rgba(0, 0, 0, 0.25); /* slight dark overlay */
+
+  z-index: 1;
 }
 
 /* Card */
@@ -16,6 +33,8 @@
   box-shadow: 0 8px 22px rgba(0,0,0,0.08);
   text-align: center;
   border: 1px solid #e6d5bd;
+  position: relative;   /* keeps it above blur */
+  z-index: 2;           /* must stay above overlay */
 }
 
 .register-card h2 {

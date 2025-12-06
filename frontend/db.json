@@ -20,7 +20,7 @@
   "products": [
     {
       "id": "1",
-      "title": "ZARA",
+      "title": "Gown",
       "name": "short | minim | veniam",
       "description": "A minimal and stylish top with a clean design, perfect for effortless everyday wear.",
       "image": "/products/top1.webp",
@@ -33,6 +33,8 @@
       "name": "blue | fugi | quis",
       "description": "A cozy blue sweater with soft texture and a comfortable fit, ideal for cool days.",
       "image": "/products/blue.jpeg",
+      "sImage": "/products/brwn.jpeg",
+      "tImage": "/products/majandha.jpeg",
       "price": 3599,
       "catogory": "women"
     },
@@ -48,9 +50,11 @@
     {
       "id": "4",
       "title": "SET MUNDU",
-      "name": "green | mundu | elit",
-      "description": "A traditional green set mundu with a soft feel, perfect for cultural and festive occasions.",
+      "name": " ksl | mundu | elit",
+      "description": "A traditional set mundu with a soft feel, perfect for cultural and festive occasions.",
       "image": "/products/greenSari.jpeg",
+      "sImage": "/products/lightrnSari.jpeg",
+      "tImage": "/products/grnSari.jpeg",
       "price": 1099,
       "catogory": "women"
     },
@@ -60,6 +64,7 @@
       "name": "Duis | aute | culpa",
       "description": "A stylish kurta with a smooth finish and versatile design for everyday comfort.",
       "image": "/products/top3.webp",
+      "sImage": "/products/top3_1.webp",
       "price": 2599,
       "catogory": "women"
     },
@@ -69,6 +74,7 @@
       "name": "blue | ipsum | dolor",
       "description": "A premium blue top/shawl with a lightweight feel, perfect for layering in style.",
       "image": "/products/shawlBl.jpeg",
+      "sImage": "/products/redshawl.jpeg",
       "price": 1499,
       "catogory": "women"
     },
@@ -78,6 +84,7 @@
       "name": "solid | plain | black",
       "description": "A soft, plain black top with a sleek minimal look, designed for modern everyday fashion.",
       "image": "/products/top4.webp",
+      "sImage": "/products/top4_1.webp",
       "price": 2299,
       "catogory": "women"
     },
@@ -85,9 +92,175 @@
       "id": "8",
       "title": "THEYYAM MUND",
       "name": "red | mundu | labore",
-      "description": "A vibrant red Theyyam-inspired mundu with a bold cultural aesthetic.",
+      "description": "A vibrant  Theyyam-inspired mundu with a bold cultural aesthetic.",
       "image": "/products/theyyam_dr.jpeg",
+      "sImage": "/products/theyyam_r.jpeg",
+      "tImage": "/products/theyyam_y.jpeg",
       "price": 1499,
+      "catogory": "women"
+    },
+    {
+      "id": "9",
+      "title": "FIT CGEUI",
+      "name": " clr | floral | midi",
+      "description": "A breezy, elegant summer dress with floral patterns, perfect for casual outings or sunny days.",
+      "image": "/products/shop2.webp",
+      "sImage": "/products/shop2_1.webp",
+      "tImage": "/products/shop2_2.webp",
+      "price": 1999,
+      "catogory": "women"
+    },
+    {
+      "id": "10",
+      "title": "CLASSIC TREND SET",
+      "name": "fashion | comfy | chic",
+      "description": "A stylish and comfortable outfit perfect for daily wear with a modern touch.",
+      "image": "/products/shop3.avif",
+      "sImage": "/products/shop3_1.avif",
+      "price": 1299,
+      "catogory": "women"
+    },
+    {
+      "id": "11",
+      "title": "MODERN WEAR",
+      "name": "elegant | soft | stylish",
+      "description": "A contemporary outfit designed with subtle tones and a premium fabric feel.",
+      "image": "/products/shop4.avif",
+      "sImage": "/products/shop4_1.avif",
+      "price": 1399,
+      "catogory": "women"
+    },
+    {
+      "id": "12",
+      "title": "TRENDY ETHNIC WEAR",
+      "name": "ethnic | modern | vibrant",
+      "description": "A lovely blend of ethnic charm and modern minimalism, ideal for festive and casual moments.",
+      "image": "/products/shop5.avif",
+      "sImage": "/products/shop5_1.avif",
+      "price": 1199,
+      "catogory": "women"
+    },
+    {
+      "id": "13",
+      "title": "CASUAL COMFORT FIT",
+      "name": "daily | breathable | light",
+      "description": "A smooth and breathable outfit that keeps you comfortable and stylish throughout the day.",
+      "image": "/products/shop6_1.webp",
+      "sImage": "/products/shop6.webp",
+      "price": 1499,
+      "catogory": "women"
+    },
+    {
+      "id": "14",
+      "title": "ELEGANT SUMMER WEAR",
+      "name": "light | breezy | soft",
+      "description": "A refreshing summer-ready outfit with smooth fabric and a graceful silhouette.",
+      "image": "/products/shop7.webp",
+      "sImage": "/products/shop7_1.webp",
+      "price": 1299,
+      "catogory": "women"
+    },
+    {
+      "id": "15",
+      "title": "URBAN CASUAL FIT",
+      "name": "modern | chic | comfy",
+      "description": "A stylish everyday outfit designed to blend comfort with a clean, modern look.",
+      "image": "/products/shop8.webp",
+      "sImage": "/products/shop8_1.webp",
+      "price": 1399,
+      "catogory": "women"
+    },
+    {
+      "id": "16",
+      "title": "TRENDY DAILY WEAR",
+      "name": "soft | elegant | minimal",
+      "description": "A minimal yet elegant piece perfect for outings, work, or everyday style.",
+      "image": "/products/shop9.webp",
+      "sImage": "/products/shop9_1.webp",
+      "price": 1199,
+      "catogory": "women"
+    },
+    {
+      "id": "17",
+      "title": "COMFORT BLOOM SET",
+      "name": "classic | fresh | smooth",
+      "description": "A beautifully crafted outfit with gentle tones and a clean, timeless design.",
+      "image": "/products/shop10.webp",
+      "sImage": "/products/shop10_1.webp",
+      "price": 1499,
+      "catogory": "women"
+    },
+    {
+      "id": "18",
+      "title": "SOFT ELEGANCE WEAR",
+      "name": "pastel | warm | premium",
+      "description": "A premium pastel-themed outfit made for subtle elegance and all-day comfort.",
+      "image": "/products/shop11.avif",
+      "sImage": "/products/shop11_1.avif",
+      "price": 1599,
+      "catogory": "women"
+    },
+    {
+      "id": "19",
+      "title": "STRIPED STYLE SET",
+      "name": "yellow | vibrant | modern",
+      "description": "A trio of vibrant striped designs that add freshness and a bold touch to your collection.",
+      "image": "/products/stripsY.jpeg",
+      "sImage": "/products/stripsV.jpeg",
+      "tImage": "/products/stripsG.jpeg",
+      "price": 999,
+      "catogory": "women"
+    },
+    {
+      "id": "20",
+      "title": "SHAWL & SARI COMBO",
+      "name": "brown | red | classic",
+      "description": "A beautiful combination set including rich shawl patterns and a graceful sari option.",
+      "image": "/products/brownshawl.jpeg",
+      "sImage": "/products/redpatrnsari.jpeg",
+      "tImage": "/products/meroonshawl.jpeg",
+      "price": 1799,
+      "catogory": "women"
+    },
+    {
+      "id": "21",
+      "title": "MODERN CLASSIC WEAR",
+      "name": "neutral | flowy | gentle",
+      "description": "A soft, modern outfit with gentle tones and a flowy design that enhances comfort.",
+      "image": "/products/shop12.webp",
+      "sImage": "/products/shop12_1.webp",
+      "price": 1399,
+      "catogory": "women"
+    },
+    {
+      "id": "22",
+      "title": "CASUAL BREEZE TOP",
+      "name": "light | airy | modern",
+      "description": "A soft and breathable top crafted for everyday comfort with a smooth modern silhouette.",
+      "image": "/products/shop13.jpeg",
+      "sImage": "/products/shop13_1.jpeg",
+      "price": 1299,
+      "catogory": "women"
+    },
+    {
+      "id": "23",
+      "title": "CLASSIC MODERN SET",
+      "name": "neutral | elegant | flowy",
+      "description": "A sleek modern outfit in warm neutral tones, designed for those who love subtle luxury.",
+      "image": "/products/shop14.jpeg",
+      "sImage": "/products/shop14_1.jpeg",
+      "tImage": "/products/shop14_2.jpeg",
+      "price": 1799,
+      "catogory": "women"
+    },
+    {
+      "id": "24",
+      "title": "URBAN ELEGANCE WEAR",
+      "name": "smooth | premium | soft-fit",
+      "description": "A refined everyday-fit outfit that blends comfort with stylish detailing, perfect for day outings.",
+      "image": "/products/shop15.jpeg",
+      "sImage": "/products/shop15_1.jpeg",
+      "price": 1399,
       "catogory": "women"
     }
   ],
