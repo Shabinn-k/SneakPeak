@@ -149,6 +149,55 @@
    .home-btN:hover {
        background-color: #357ab8;
    }
+/* PAYMENT SUMMARY BOX */
+.payment-summary {
+  margin-top: 35px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.payment-summary h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.payment-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  color: #444;
+  font-size: 17px;
+}
+
+.payment-row.total {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 8px;
+  color: #000;
+}
+
+/* PAYMENT BUTTON */
+.pay-btn {
+  margin-top: 20px;
+  width: 100%;
+  background: #4a90e2;
+  padding: 14px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.25s;
+}
+
+.pay-btn:hover {
+  background: #357bd8;
+  transform: translateY(-2px);
+}
 
 
 /* Responsive design */

@@ -1,40 +1,36 @@
-/* Full page center */
 .register-page {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 
-  background: url("../assets/regBan.jpg");
-  background-size: cover;       /* make image fully cover the screen */
+  background: url("../assets/regBan.webp");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;           /* required for blur overlay */
+  position: relative;
 }
 
-/* Blur + dim overlay */
 .register-page::before {
   content: "";
   position: absolute;
   inset: 0;
-
-  backdrop-filter: blur(3px);     /* main blur */
-  background: rgba(0, 0, 0, 0.25); /* slight dark overlay */
-
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.25);
   z-index: 1;
 }
 
-/* Card */
+
 .register-card {
-  width: 380px;
-  background: #fff7ec; /* Light beige card */
+  width: 380px; 
+  background: #fff7ec;
   padding: 35px 40px;
   border-radius: 18px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
   text-align: center;
   border: 1px solid #e6d5bd;
-  position: relative;   /* keeps it above blur */
-  z-index: 2;           /* must stay above overlay */
+  position: relative;
+  z-index: 2;
 }
 
 .register-card h2 {
@@ -50,7 +46,6 @@
   margin-bottom: 25px;
 }
 
-/* Inputs */
 .input-group {
   width: 100%;
   text-align: left;
@@ -61,7 +56,7 @@
   width: 100%;
   padding: 12px 14px;
   border-radius: 10px;
-  border: 1.5px solid #d7c3a5; /* Soft brown border */
+  border: 1.5px solid #d7c3a5;
   background: #fffdf8;
   font-size: 15px;
   color: #4b3a26;
@@ -70,7 +65,7 @@
 }
 
 .input-group input:focus {
-  border-color: #8a5a30; /* Brown highlight */
+  border-color: #8a5a30;
   box-shadow: 0 0 5px rgba(138, 90, 48, 0.3);
 }
 
@@ -78,12 +73,15 @@
   color: red;
   font-size: 12px;
 }
-
-/* Button */
+.ch{
+  position: relative;
+  left: 6px !important;
+  top: -5px !important;
+}
 .register-btn {
   width: 100%;
   padding: 13px;
-  background: #8a5a30; /* Main brown */
+  background: #8a5a30;
   border: none;
   border-radius: 10px;
   font-size: 16px;
@@ -95,5 +93,5 @@
 }
 
 .register-btn:hover {
-  background: #6f4726; /* Darker brown */
+  background: #6f4726;
 }

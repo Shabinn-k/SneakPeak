@@ -1,0 +1,204 @@
+/* ============================
+   WRAPPER (CENTERED FLEX)
+============================= */
+.payment-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f6f2ea; /* Beige background */
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* MAIN BOX */
+.payment-box {
+  width: 100%;
+  max-width: 1100px;
+  background: #ffffff;
+  display: flex;
+  gap: 40px;
+
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.08);
+
+  animation: fadeIn 0.4s ease;
+}
+
+/* ============================
+   LEFT SUMMARY SECTION
+============================= */
+.summry {
+  flex: 1;
+}
+
+.summry h2 {
+  color: #6d4c2f;
+  margin-bottom: 15px;
+}
+
+.summary-item {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 12px;
+  background: #f9f3ea;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.summary-item img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.summary-price {
+  margin-left: auto;
+  font-weight: 700;
+  color: #d8a85b;
+}
+
+/* TOTALS */
+.summary-total p,
+.summary-total h3 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.summary-total h3 {
+  margin-top: 12px;
+  color: #6d4c2f;
+  font-weight: 700;
+}
+
+/* ============================
+   RIGHT PAYMENT SECTION
+============================= */
+.payment-section {
+  flex: 1;
+}
+
+.payment-section h2 {
+  color: #6d4c2f;
+  margin-bottom: 15px;
+}
+
+/* PAYMENT METHODS */
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pay-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: #f7efe3;
+  padding: 14px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+
+  transition: 0.25s ease;
+  font-weight: 600;
+  color: #4a3627;
+}
+
+.pay-option.active {
+  border-color: #d8a85b;
+  background: #fff7e6;
+}
+
+.cod-icon {
+  font-size: 22px;
+}
+
+/* UPI INPUT */
+.upi-box {
+  margin-top: 20px;
+}
+
+.upi-box input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #d2c4b5;
+  margin-top: 10px;
+  background: #fffdf9;
+}
+
+.small-text {
+  font-size: 13px;
+  margin-top: 6px;
+  color: #6d4c2f;
+}
+
+/* CARD INPUTS */
+.card-box {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-box input {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #d2c4b5;
+  background: #fffdf9;
+}
+
+/* COD NOTE */
+.cod-box {
+  margin-top: 20px;
+  background: #fff7e4;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #eed6ad;
+}
+
+/* PAY BUTTON */
+.pay-btn {
+  width: 100%;
+  margin-top: 25px;
+  padding: 15px;
+
+  background: #d8a85b;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(216,168,91,0.45);
+}
+
+.pay-btn:hover {
+  background: #c7964c;
+  transform: translateY(-2px);
+}
+
+.pay-btn.loading {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .payment-box {
+    flex-direction: column;
+  }
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

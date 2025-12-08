@@ -10,12 +10,13 @@ import About from './pages/About.jsx'
 
 const Cart = lazy(() => import("./pages/Cart/Cart.jsx"));
 const Wishlist = lazy(() => import("./pages/Wishlist/Wishlist.jsx"))
+const Detail = lazy(() => import("./pages/DetailsCards/Detail.jsx"))
+const Payment = lazy(() => import("./pages/Payment/Payment.jsx"))
 
 const MainRouter = () => {
 
   const location = useLocation();
-  const hideFoot = ["/shop", "/cart", "/wishlist","/about"].includes(location.pathname);
-
+  const hideFoot = ["/shop", "/cart", "/wishlist", "/about", "/payment", "/detail"].includes(location.pathname);
   return (
     <>
       <Suspense fallback={<div className='loader'>Loading...</div>}>
@@ -25,11 +26,11 @@ const MainRouter = () => {
           <Route path='/shop' element={<Shop />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/wishlist' element={<Wishlist />} />
-          <Route path='/about' element={<About/>}/>
+          <Route path='/about' element={<About />} />
+          <Route path='/detail/:id' element={<Detail />} />
+          <Route path='/payment' element={<Payment />} />
           <Route path='*' element={<NotFound />} />
-
         </Routes>
-
         {!hideFoot && <Footer />}
       </Suspense>
     </>
@@ -38,4 +39,4 @@ const MainRouter = () => {
 
 }
 
-export default MainRouter
+export default MainRouter 

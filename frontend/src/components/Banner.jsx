@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import ban1 from "./../assets/ban1.jpg"
-import ban2 from "./../assets/ban2.jpg";
-import ban3 from "./../assets/ban3.jpg";
-import ban4 from "./../assets/ban4.png";
+import ban1 from "./../assets/ban1.webp"
+import ban2 from "./../assets/ban2.webp";
+import ban3 from "./../assets/ban3.webp";
+import ban4 from "./../assets/ban4.webp";
 import "./Banner.css";
 
 const Banner = () => {

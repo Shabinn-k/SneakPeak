@@ -14,7 +14,7 @@ const Shop = () => {
     const [search,setSearch]=useState("");
     const [shop,setShop]=useState(products);
 
-    const {user,openLogin}=useAuth()
+    const {user}=useAuth()
     const {addToCart} = useContext(CartContext);
 
     useEffect(()=>{
@@ -28,8 +28,7 @@ const Shop = () => {
     const handleAddToCart = async(product)=>{
       if(!user){
         toast.error("Please login to add items to Cart !")
-        openLogin();
-        return
+          return
       }
     addToCart(product);
     toast.success("Added to Cart !")
@@ -44,10 +43,10 @@ const Shop = () => {
             <div className="product-card" key={item.id}>
               <div className="image-box">
              <FaHeart className="wishlist-icon" />
-              <img src={item.image} alt={item.title} />
+              <img src={item.image} alt={item.title} onClick={()=>navigate(`/detail/${item.id}`)}/>
               </div>
               <h3>{item.title}</h3>
-              <h2 className="name">{item.name}</h2>
+              <h2 className="name" onClick={()=>navigate(`/detail/${item.id}`)}>{item.name}</h2>
               <span className="price">₹ {item.price}</span>
               <button className="addCart" onClick={()=>handleAddToCart(item)}>Add to Cart</button>
             </div>

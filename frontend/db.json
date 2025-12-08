@@ -1,22 +1,5 @@
 {
-  "users": [
-    {
-      "id": "ec50",
-      "name": "messi",
-      "number": 1234567890,
-      "email": "neymar@gmail.com",
-      "password": "neymar123",
-      "cpass": "neymar123"
-    },
-    {
-      "id": "e6e0",
-      "name": "hanan",
-      "number": 9876543210,
-      "email": "hanan@gmail.com",
-      "password": "12345678",
-      "cpass": "12345678"
-    }
-  ],
+  "users": [],
   "products": [
     {
       "id": "1",
@@ -32,9 +15,9 @@
       "title": "SWEATER",
       "name": "blue | fugi | quis",
       "description": "A cozy blue sweater with soft texture and a comfortable fit, ideal for cool days.",
-      "image": "/products/blue.jpeg",
-      "sImage": "/products/brwn.jpeg",
-      "tImage": "/products/majandha.jpeg",
+      "image": "/products/blue.webp",
+      "sImage": "/products/brwn.webp",
+      "tImage": "/products/majandha.webp",
       "price": 3599,
       "catogory": "women"
     },
@@ -52,9 +35,9 @@
       "title": "SET MUNDU",
       "name": " ksl | mundu | elit",
       "description": "A traditional set mundu with a soft feel, perfect for cultural and festive occasions.",
-      "image": "/products/greenSari.jpeg",
-      "sImage": "/products/lightrnSari.jpeg",
-      "tImage": "/products/grnSari.jpeg",
+      "image": "/products/greenSari.webp",
+      "sImage": "/products/lightrnSari.webp",
+      "tImage": "/products/grnSari.webp",
       "price": 1099,
       "catogory": "women"
     },
@@ -73,8 +56,8 @@
       "title": "LORUM",
       "name": "blue | ipsum | dolor",
       "description": "A premium blue top/shawl with a lightweight feel, perfect for layering in style.",
-      "image": "/products/shawlBl.jpeg",
-      "sImage": "/products/redshawl.jpeg",
+      "image": "/products/shawlBl.webp",
+      "sImage": "/products/redshawl.webp",
       "price": 1499,
       "catogory": "women"
     },
@@ -93,9 +76,9 @@
       "title": "THEYYAM MUND",
       "name": "red | mundu | labore",
       "description": "A vibrant  Theyyam-inspired mundu with a bold cultural aesthetic.",
-      "image": "/products/theyyam_dr.jpeg",
-      "sImage": "/products/theyyam_r.jpeg",
-      "tImage": "/products/theyyam_y.jpeg",
+      "image": "/products/theyyam_dr.webp",
+      "sImage": "/products/theyyam_r.webp",
+      "tImage": "/products/theyyam_y.webp",
       "price": 1499,
       "catogory": "women"
     },
@@ -115,8 +98,8 @@
       "title": "CLASSIC TREND SET",
       "name": "fashion | comfy | chic",
       "description": "A stylish and comfortable outfit perfect for daily wear with a modern touch.",
-      "image": "/products/shop3.avif",
-      "sImage": "/products/shop3_1.avif",
+      "image": "/products/shop3.webp",
+      "sImage": "/products/shop3_1.webp",
       "price": 1299,
       "catogory": "women"
     },
@@ -125,8 +108,8 @@
       "title": "MODERN WEAR",
       "name": "elegant | soft | stylish",
       "description": "A contemporary outfit designed with subtle tones and a premium fabric feel.",
-      "image": "/products/shop4.avif",
-      "sImage": "/products/shop4_1.avif",
+      "image": "/products/shop4.webp",
+      "sImage": "/products/shop4_1.webp",
       "price": 1399,
       "catogory": "women"
     },
@@ -135,8 +118,8 @@
       "title": "TRENDY ETHNIC WEAR",
       "name": "ethnic | modern | vibrant",
       "description": "A lovely blend of ethnic charm and modern minimalism, ideal for festive and casual moments.",
-      "image": "/products/shop5.avif",
-      "sImage": "/products/shop5_1.avif",
+      "image": "/products/shop5.webp",
+      "sImage": "/products/shop5_1.webp",
       "price": 1199,
       "catogory": "women"
     },
@@ -195,8 +178,8 @@
       "title": "SOFT ELEGANCE WEAR",
       "name": "pastel | warm | premium",
       "description": "A premium pastel-themed outfit made for subtle elegance and all-day comfort.",
-      "image": "/products/shop11.avif",
-      "sImage": "/products/shop11_1.avif",
+      "image": "/products/shop11.webp",
+      "sImage": "/products/shop11_1.webp",
       "price": 1599,
       "catogory": "women"
     },
@@ -205,9 +188,9 @@
       "title": "STRIPED STYLE SET",
       "name": "yellow | vibrant | modern",
       "description": "A trio of vibrant striped designs that add freshness and a bold touch to your collection.",
-      "image": "/products/stripsY.jpeg",
-      "sImage": "/products/stripsV.jpeg",
-      "tImage": "/products/stripsG.jpeg",
+      "image": "/products/stripsY.webp",
+      "sImage": "/products/stripsV.webp",
+      "tImage": "/products/stripsG.webp",
       "price": 999,
       "catogory": "women"
     },
@@ -216,9 +199,9 @@
       "title": "SHAWL & SARI COMBO",
       "name": "brown | red | classic",
       "description": "A beautiful combination set including rich shawl patterns and a graceful sari option.",
-      "image": "/products/brownshawl.jpeg",
-      "sImage": "/products/redpatrnsari.jpeg",
-      "tImage": "/products/meroonshawl.jpeg",
+      "image": "/products/brownshawl.webp",
+      "sImage": "/products/redpatrnsari.webp",
+      "tImage": "/products/meroonshawl.webp",
       "price": 1799,
       "catogory": "women"
     },
@@ -237,8 +220,8 @@
       "title": "CASUAL BREEZE TOP",
       "name": "light | airy | modern",
       "description": "A soft and breathable top crafted for everyday comfort with a smooth modern silhouette.",
-      "image": "/products/shop13.jpeg",
-      "sImage": "/products/shop13_1.jpeg",
+      "image": "/products/shop13.webp",
+      "sImage": "/products/shop13_1.webp",
       "price": 1299,
       "catogory": "women"
     },
@@ -247,9 +230,9 @@
       "title": "CLASSIC MODERN SET",
       "name": "neutral | elegant | flowy",
       "description": "A sleek modern outfit in warm neutral tones, designed for those who love subtle luxury.",
-      "image": "/products/shop14.jpeg",
-      "sImage": "/products/shop14_1.jpeg",
-      "tImage": "/products/shop14_2.jpeg",
+      "image": "/products/shop14.webp",
+      "sImage": "/products/shop14_1.webp",
+      "tImage": "/products/shop14_2.webp",
       "price": 1799,
       "catogory": "women"
     },
@@ -258,8 +241,8 @@
       "title": "URBAN ELEGANCE WEAR",
       "name": "smooth | premium | soft-fit",
       "description": "A refined everyday-fit outfit that blends comfort with stylish detailing, perfect for day outings.",
-      "image": "/products/shop15.jpeg",
-      "sImage": "/products/shop15_1.jpeg",
+      "image": "/products/shop15.webp",
+      "sImage": "/products/shop15_1.webp",
       "price": 1399,
       "catogory": "women"
     }

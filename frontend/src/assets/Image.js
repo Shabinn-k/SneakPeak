@@ -1,13 +1,10 @@
-import cart from "./cart.png";
-import wish from "./wishlist.png";
-import logo from "./logo.png";
-import instagram from "./insta.png";
-import facebook from "./fb.png";
-import linked from "./linked.png";
-import hrt from "./hrt.png";
-
-//Top Selling
-
+import cart from "./cart.webp";
+import wish from "./wishlist.webp";
+import logo from "./logo.webp";
+import instagram from "./insta.webp";
+import facebook from "./fb.webp";
+import linked from "./linked.webp";
+import hrt from "./hrt.webp";
 
     const image={
         cart,
@@ -17,13 +14,6 @@ import hrt from "./hrt.png";
         facebook,
         linked,
         hrt,
-        // balenPuma,
-        // boots ,
-        // hydros ,
-        // Mocha ,
-        // nike_red, 
-        // panda_3 ,
-        // puma1 ,
     }
 
 export default image;
