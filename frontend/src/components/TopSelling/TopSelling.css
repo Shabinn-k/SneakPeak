@@ -95,7 +95,7 @@ h1{
         justify-content: center;
         gap: 15px;
     }
-
+    
     .card {
         width: 46% !important;   /* 2 cards per row */
         margin: 0 auto;

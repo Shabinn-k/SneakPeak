@@ -6,6 +6,7 @@ import "./Cart.css";
 const Cart = () => {
   const navigate = useNavigate();
   const { cartItems, addToCart, removeCart } = useContext(CartContext)
+
   return (
   <div className='cart-page'>
     {cartItems.length === 0 ? (
@@ -43,7 +44,7 @@ const Cart = () => {
 
           <div className="payment-row">
             <span>Subtotal</span>
-            <span>₹{cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)}</span>
+            <span>₹ {cartItems.reduce((acc, item) => acc + item.price * item.quantity,null)}</span>
           </div>
 
           <div className="payment-row">
@@ -53,15 +54,15 @@ const Cart = () => {
 
           <div className="payment-row total">
             <span>Total</span>
-            <span> ₹{cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0) + 80} </span>
+            <span>₹ {cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0) + 80} </span>
           </div>
 
-          <button className="pay-btn" onClick={() => navigate("/payment")}>
+          <button className="pay-btN" onClick={() => navigate("/payment")}>
             Proceed To Payment
           </button>
         </div>
 
-        <button className="home-btN" onClick={() => navigate("/")}>GO HOME</button>
+        <button className="home-btN1" onClick={() => navigate("/")}>GO HOME</button>
       </>
     )}
   </div>

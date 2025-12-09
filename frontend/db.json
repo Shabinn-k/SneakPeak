@@ -1,5 +1,14 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": "fd32",
+      "name": "shabin",
+      "number": 1234567890,
+      "email": "sha@gmail.com",
+      "password": "123456789",
+      "cpass": "123456789"
+    }
+  ],
   "products": [
     {
       "id": "1",
@@ -36,7 +45,7 @@
       "name": " ksl | mundu | elit",
       "description": "A traditional set mundu with a soft feel, perfect for cultural and festive occasions.",
       "image": "/products/greenSari.webp",
-      "sImage": "/products/lightrnSari.webp",
+      "sImage": "/products/lightgrnSari.webp",
       "tImage": "/products/grnSari.webp",
       "price": 1099,
       "catogory": "women"
@@ -89,7 +98,6 @@
       "description": "A breezy, elegant summer dress with floral patterns, perfect for casual outings or sunny days.",
       "image": "/products/shop2.webp",
       "sImage": "/products/shop2_1.webp",
-      "tImage": "/products/shop2_2.webp",
       "price": 1999,
       "catogory": "women"
     },
@@ -221,7 +229,6 @@
       "name": "light | airy | modern",
       "description": "A soft and breathable top crafted for everyday comfort with a smooth modern silhouette.",
       "image": "/products/shop13.webp",
-      "sImage": "/products/shop13_1.webp",
       "price": 1299,
       "catogory": "women"
     },
@@ -248,5 +255,51 @@
     }
   ],
   "cart": [],
-  "wishlist": []
+  "wishlist": [
+    {
+      "id": "2",
+      "title": "SWEATER",
+      "name": "blue | fugi | quis",
+      "description": "A cozy blue sweater with soft texture and a comfortable fit, ideal for cool days.",
+      "image": "/products/blue.webp",
+      "sImage": "/products/brwn.webp",
+      "tImage": "/products/majandha.webp",
+      "price": 3599,
+      "catogory": "women"
+    }
+  ],
+  "feedbacks": [
+    {
+      "id": 1,
+      "name": "Priya Sharma",
+      "rating": 5,
+      "comment": "The quality of the silk saree is amazing! Perfect for my sister's wedding.",
+      "product": "Silk Saree",
+      " date": "2 weeks ago"
+    },
+    {
+      "id": 2,
+      "name": "Rajesh Kumar",
+      "rating": 4,
+      "comment": "Great customer service and fast delivery. The shirt fits perfectly for office wear.",
+      "product": "Formal Shirt",
+      " date": "1 month ago"
+    },
+    {
+      "id": 3,
+      "name": "Ananya Patel",
+      "rating": 5,
+      "comment": "Love the dress! Color matched the picture, and the fitting is perfect!",
+      "product": "Designer Dress",
+      " date": "3 days ago"
+    },
+    {
+      "id": "5aca",
+      "name": "shabin",
+      "rating": 3,
+      "comment": "nice product",
+      "product": "General",
+      "date": "Just now"
+    }
+  ]
 }

@@ -5,8 +5,10 @@ import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { CartContext } from '../../context/CartContext';
 import { useAuth } from '../../Authentication/AuthContext';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const TopSelling = ({ setShowLogin }) => {
+    const navigate= useNavigate()
     const { user } = useAuth();
     const [prod, setProd] = useState([]);
     const { addToCart, addToWish } = useContext(CartContext);
@@ -43,17 +45,13 @@ const TopSelling = ({ setShowLogin }) => {
             <div className="group-1">
                 {prod.slice(0, 4).map((item) => (
                     <div key={item.id} className="card">
-                        <img src={item.image} alt={item.title} />
+                        <img src={item.image} alt={item.title} onClick={()=>navigate(`/detail/${item.id}`)}/>
                         <h3>{item.title}</h3>
                         <div className="card-icons">
-                            <FaHeart
-                                className="wish-icon"
-                                onClick={() => { if (handleWish()) addToWish(item); }}
-                            />
-                            <FaShoppingCart
-                                className="cart-icon"
-                                onClick={() => { if (handleCart()) addToCart(item); }}
-                            />
+                            <FaHeart className="wish-icon"
+                                onClick={() => { if (handleWish()) addToWish(item); }} />
+                            <FaShoppingCart className="cart-icon"
+                                onClick={() => { if (handleCart()) addToCart(item); }} />
                         </div>
                         <h2>{item.name}</h2>
                         <p>{item.catogory}</p>
@@ -65,17 +63,13 @@ const TopSelling = ({ setShowLogin }) => {
             <div className="group-2">
                 {prod.slice(4, 8).map((item) => (
                     <div key={item.id} className="card">
-                        <img src={item.image} alt={item.title} />
+                        <img src={item.image} alt={item.title} onClick={()=>navigate(`/detail/${item.id}`)}/>
                         <h3>{item.title}</h3>
                         <div className="card-icons">
-                            <FaHeart
-                                className="wish-icon"
-                                onClick={() => { if (handleWish()) addToWish(item); }}
-                            />
-                            <FaShoppingCart
-                                className="cart-icon"
-                                onClick={() => { if (handleCart()) addToCart(item); }}
-                            />
+                            <FaHeart className="wish-icon"
+                                onClick={() => { if (handleWish()) addToWish(item); }}/>
+                            <FaShoppingCart className="cart-icon"
+                                onClick={() => { if (handleCart()) addToCart(item); }} />
                         </div>
                         <h2>{item.name}</h2>
                         <p>{item.catogory}</p>

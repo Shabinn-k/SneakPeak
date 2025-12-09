@@ -1,188 +1,196 @@
 /* ============================
-   WRAPPER (CENTERED FLEX)
-============================= */
+   GLOBAL STYLE IMPROVEMENTS
+============================ */
 .payment-page {
   width: 100%;
   min-height: 100vh;
-  background: #f6f2ea; /* Beige background */
+  background: linear-gradient(135deg, #f3eee6, #faf7f2);
   display: flex;
   justify-content: center;
   padding: 40px 20px;
+  font-family: "Inter", sans-serif;
 }
 
-/* MAIN BOX */
+/* Main Card */
 .payment-box {
   width: 100%;
   max-width: 1100px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.85);
   display: flex;
   gap: 40px;
-
   padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0px 6px 20px rgba(0,0,0,0.08);
-
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.12);
   animation: fadeIn 0.4s ease;
 }
 
 /* ============================
    LEFT SUMMARY SECTION
-============================= */
+============================ */
 .summry {
   flex: 1;
 }
 
 .summry h2 {
-  color: #6d4c2f;
-  margin-bottom: 15px;
+  color: #3f2d16;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 0.4px;
 }
 
 .summary-item {
   display: flex;
   gap: 15px;
   align-items: center;
-  padding: 12px;
-  background: #f9f3ea;
-  border-radius: 12px;
-  margin-bottom: 12px;
+  padding: 14px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #ece7df;
+  transition: 0.25s ease;
+}
+
+.summary-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
 }
 
 .summary-item img {
   width: 70px;
   height: 70px;
-  border-radius: 10px;
+  border-radius: 12px;
   object-fit: cover;
 }
 
 .summary-price {
   margin-left: auto;
   font-weight: 700;
-  color: #d8a85b;
+  color: #d69c47;
+  font-size: 17px;
 }
 
-/* TOTALS */
+/* Totals */
 .summary-total p,
 .summary-total h3 {
   display: flex;
   justify-content: space-between;
-  margin-top: 8px;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #3d332a;
 }
 
 .summary-total h3 {
-  margin-top: 12px;
-  color: #6d4c2f;
-  font-weight: 700;
+  margin-top: 15px;
+  color: #2f261c;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 /* ============================
    RIGHT PAYMENT SECTION
-============================= */
+============================ */
 .payment-section {
   flex: 1;
 }
 
 .payment-section h2 {
-  color: #6d4c2f;
-  margin-bottom: 15px;
+  color: #3f2d16;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 700;
 }
 
-/* PAYMENT METHODS */
+/* Payment Options */
 .payment-options {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .pay-option {
   display: flex;
   align-items: center;
-  gap: 12px;
-
-  background: #f7efe3;
-  padding: 14px;
-  border-radius: 12px;
+  gap: 14px;
+  background: #faf5ee;
+  padding: 16px;
+  border-radius: 14px;
   border: 2px solid transparent;
   cursor: pointer;
-
   transition: 0.25s ease;
   font-weight: 600;
-  color: #4a3627;
+  color: #4a3a2b;
+}
+
+.pay-option:hover {
+  transform: translateY(-2px);
+  background: #fff7e9;
 }
 
 .pay-option.active {
-  border-color: #d8a85b;
-  background: #fff7e6;
+  border-color: #d6a862;
+  background: #fff5db;
+  box-shadow: 0px 4px 12px rgba(214, 168, 98, 0.25);
 }
 
 .cod-icon {
-  font-size: 22px;
+  font-size: 24px;
 }
 
-/* UPI INPUT */
-.upi-box {
-  margin-top: 20px;
+/* UPI Box */
+.upi-box,
+.card-box,
+.cod-box {
+  margin-top: 22px;
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid #eee3d3;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.06);
 }
 
-.upi-box input {
+.upi-box input,
+.card-box input {
   width: 100%;
   padding: 14px;
-  border-radius: 10px;
-  border: 1px solid #d2c4b5;
+  border-radius: 12px;
+  border: 1px solid #d4c6b6;
   margin-top: 10px;
   background: #fffdf9;
+  font-size: 15px;
 }
 
 .small-text {
   font-size: 13px;
-  margin-top: 6px;
-  color: #6d4c2f;
+  margin-top: 8px;
+  color: #6a5642;
 }
 
-/* CARD INPUTS */
-.card-box {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.card-box input {
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px solid #d2c4b5;
-  background: #fffdf9;
-}
-
-/* COD NOTE */
+/* COD Box */
 .cod-box {
-  margin-top: 20px;
-  background: #fff7e4;
-  padding: 15px;
-  border-radius: 10px;
-  border: 1px solid #eed6ad;
+  color: #5a4a37;
+  font-size: 15px;
 }
 
-/* PAY BUTTON */
+/* Modern Pay Button */
 .pay-btn {
   width: 100%;
-  margin-top: 25px;
-  padding: 15px;
-
-  background: #d8a85b;
+  margin-top: 28px;
+  padding: 16px;
+  background: #d6a862;
   color: white;
   font-size: 18px;
   font-weight: 700;
   border: none;
-
-  border-radius: 12px;
+  border-radius: 14px;
   cursor: pointer;
   transition: 0.3s ease;
-  box-shadow: 0px 4px 10px rgba(216,168,91,0.45);
+  box-shadow: 0px 4px 15px rgba(214, 168, 98, 0.45);
 }
 
 .pay-btn:hover {
-  background: #c7964c;
-  transform: translateY(-2px);
+  background: #c6964f;
+  transform: translateY(-3px);
 }
 
 .pay-btn.loading {
@@ -194,6 +202,7 @@
 @media (max-width: 900px) {
   .payment-box {
     flex-direction: column;
+    padding: 20px;
   }
 }
 

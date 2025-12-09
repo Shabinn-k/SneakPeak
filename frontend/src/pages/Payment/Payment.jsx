@@ -123,8 +123,8 @@ const Payment = () => {
           )}
 
           <button className={`pay-btn ${loading ? "loading" : ""}`}
-            onClick={()=>{handlePay();removeCart(id)}}>
-            {loading ? "Processing..." : `Pay ₹ ${total}`}
+            onClick={()=>{handlePay();removeCart(item.id)}}>
+            {loading ? "buying.." : `Pay ₹ ${total}`}
           </button>
         </div>
       </div>

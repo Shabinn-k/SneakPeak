@@ -1,5 +1,3 @@
-/* =========================
-   
 
 /* Clean centered wrapper */
 .detail-page {
@@ -17,9 +15,7 @@
   position: relative;
 }
 
-/* =========================
-   GO TO SHOP BUTTON
-========================= */
+
 .shop-btn {
   position: absolute;
   top: -30px;
@@ -40,9 +36,6 @@
   transform: translateY(-2px);
 }
 
-/* =========================
-   LEFT IMAGE COLUMN
-========================= */
 .left {
   flex: 1;
 }
@@ -119,9 +112,6 @@
   color: #d8a85b;
 }
 
-/* =========================
-   QUANTITY SELECTOR
-========================= */
 .qntity {
   display: flex;
   gap: 15px;

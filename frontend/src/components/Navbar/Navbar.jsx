@@ -38,7 +38,6 @@ const Navbar = ({ setShowLogin }) => {
         <div className="links">
           <Link to="/" className="link-items">Home</Link>
           <Link to="/shop" className="link-items">Shop</Link>
-          <Link to="/brands" className="link-items">Brands</Link>
           <Link to="/about" className="link-items">About Us</Link>
         </div>
 
@@ -72,7 +71,6 @@ const Navbar = ({ setShowLogin }) => {
         <div className="mobile-links">
           <Link to="/" onClick={() => setOpenMenu(false)}>Home</Link>
           <Link to="/shop" onClick={() => setOpenMenu(false)}>Shop</Link>
-          <Link to="/brands" onClick={() => setOpenMenu(false)}>Brands</Link>
           <Link to="/about" onClick={() => setOpenMenu(false)}>About Us</Link>
           <hr />
           <div onClick={() => { handleWish(); setOpenMenu(false); }}>Wishlist</div>

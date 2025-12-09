@@ -7,7 +7,7 @@ import "./Banner.css";
 
 const Banner = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const bannerImages = [ban4,ban1, ban2, ban3];
+    const bannerImages = [ban4, ban1, ban2, ban3];
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -20,7 +20,7 @@ const Banner = () => {
         <div className='banner'>
             <div className="bannerContainer">
                 {bannerImages
-                    .map((item,index) => (
+                    .map((item, index) => (
                         <div key={index}
                             className={`banner-slide ${index === currentSlide ? 'active' : ''}`}>
                             <img src={item} /></div>

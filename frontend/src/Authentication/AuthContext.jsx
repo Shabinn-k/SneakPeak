@@ -56,6 +56,8 @@ export const AuthProvider = (props) => {
         try {
             //if alrdy exist
             const check = await api.get("/users", { params: { email: newUser.email } });
+           console.log(check);
+           
             if (check.data.length) {
                 toast.error("Email already exist !");
                 return false
