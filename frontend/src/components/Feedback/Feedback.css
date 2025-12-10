@@ -20,7 +20,7 @@
   margin-bottom: 30px;
 }
 
-/* Feedback Cards Layout */
+/* Feedback Cards Grid */
 .feedback-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -28,7 +28,7 @@
   margin-bottom: 40px;
 }
 
-/* Card */
+/* Individual Card */
 .feedback-card {
   background: #ffffff;
   padding: 20px;
@@ -43,7 +43,7 @@
   transform: translateY(-5px);
 }
 
-/* User Info Row */
+/* User Info */
 .user-info {
   display: flex;
   align-items: center;
@@ -116,6 +116,7 @@
   gap: 25px;
   align-items: center;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .rating-circle {
@@ -167,12 +168,58 @@
 .write-review-btn:hover {
   background: #b89a75;
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(184, 154, 117, 0.3);
+  box-shadow: 0 6px 15px rgba(184,154,117,0.3);
 }
 
-/* Responsive */
+/* ==================================
+          RESPONSIVE
+================================== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .feedback-container h2 {
+    font-size: 26px;
+  }
+
+  .average-rating {
+    gap: 15px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .average-rating {
     flex-direction: column;
+    padding: 20px;
+  }
+
+  .rating-info h3 {
+    font-size: 20px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .feedback-container {
+    padding: 15px;
+  }
+
+  .feedback-card {
+    padding: 15px;
+  }
+
+  .rating-circle {
+    width: 75px;
+    height: 75px;
+  }
+
+  .rating-number {
+    font-size: 24px;
+  }
+
+  .write-review-btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 15px;
   }
 }

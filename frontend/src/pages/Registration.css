@@ -1,3 +1,4 @@
+/* FULL PAGE BACKGROUND */
 .register-page {
   display: flex;
   justify-content: center;
@@ -11,6 +12,7 @@
   position: relative;
 }
 
+/* Background Blur Overlay */
 .register-page::before {
   content: "";
   position: absolute;
@@ -20,9 +22,9 @@
   z-index: 1;
 }
 
-
+/* FORM CARD */
 .register-card {
-  width: 380px; 
+  width: 380px;
   background: #fff7ec;
   padding: 35px 40px;
   border-radius: 18px;
@@ -46,6 +48,7 @@
   margin-bottom: 25px;
 }
 
+/* INPUTS */
 .input-group {
   width: 100%;
   text-align: left;
@@ -73,11 +76,14 @@
   color: red;
   font-size: 12px;
 }
-.ch{
+
+.ch {
   position: relative;
   left: 6px !important;
   top: -5px !important;
 }
+
+/* BUTTON */
 .register-btn {
   width: 100%;
   padding: 13px;
@@ -94,4 +100,69 @@
 
 .register-btn:hover {
   background: #6f4726;
+}
+
+/* ============================
+        RESPONSIVE
+============================ */
+
+/* TABLET */
+@media (max-width: 900px) {
+  .register-card {
+    width: 350px;
+    padding: 32px 32px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .register-page {
+    padding: 20px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .register-card {
+    width: 100%;
+    max-width: 360px;
+    padding: 28px 24px;
+  }
+
+  .register-card h2 {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .input-group input {
+    padding: 11px 12px;
+    font-size: 14px;
+  }
+
+  .register-btn {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 420px) {
+  .register-card {
+    padding: 24px 18px;
+  }
+
+  .register-card h2 {
+    font-size: 20px;
+  }
+
+  .input-group input {
+    font-size: 14px;
+  }
+
+  .register-btn {
+    font-size: 14px;
+    padding: 11px;
+  }
 }

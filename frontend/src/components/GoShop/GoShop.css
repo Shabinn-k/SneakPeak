@@ -12,12 +12,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; 
+  height: 100%;
   object-fit: cover;
   z-index: -1;
 }
 
-/* Dark overlay */
+/* Dark Overlay */
 .video-bg-container::after {
   content: "";
   position: absolute;
@@ -25,17 +25,19 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 1; /* BELOW content */
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
 }
 
-/* Content on top */
+/* Center Content */
 .video-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2; /* FIXED -> clickable */
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px; /* Prevent text cutoff */
 }
 
 /* Button */
@@ -55,4 +57,45 @@
   background: white;
   transform: scale(1.06);
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* =============================
+            RESPONSIVE
+============================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .video-bg-container {
+    height: 80vh;
+  }
+
+  .shop-btn {
+    font-size: 20px;
+    padding: 14px 35px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .video-bg-container {
+    height: 65vh;
+  }
+  
+  .shop-btn {
+    font-size: 18px;
+    padding: 12px 30px;
+    border-radius: 25px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .video-bg-container {
+    height: 55vh;
+  }
+
+  .shop-btn {
+    font-size: 16px;
+    padding: 10px 26px;
+  }
 }

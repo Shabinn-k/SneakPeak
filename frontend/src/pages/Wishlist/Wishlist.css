@@ -89,6 +89,13 @@
   display: inline-block;
 }
 
+/* BUTTON GROUP */
+.btns {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
 /* ADD TO CART BUTTON */
 .tocart button {
   padding: 12px 26px;
@@ -98,10 +105,8 @@
   border-radius: 14px;
   font-size: 16px;
   font-weight: 600;
-
   cursor: pointer;
   transition: 0.25s ease;
-
   box-shadow: 0 4px 12px rgba(212,184,150,0.4);
 }
 
@@ -111,8 +116,7 @@
   box-shadow: 0 6px 18px rgba(184,154,117,0.45);
 }
 
-
-
+/* REMOVE BUTTON */
 .remove {
   padding: 12px 22px;
   background: #e15b54;
@@ -124,7 +128,6 @@
   cursor: pointer;
 
   transition: 0.25s ease;
-
   box-shadow: 0 4px 12px rgba(255,0,0,0.15);
 }
 
@@ -133,20 +136,15 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(200,0,0,0.25);
 }
-.btns{
-    display: flex;
-    gap: 5px;
-    margin-left: auto;
-}
 
 /* GO HOME BUTTON (BOTTOM) */
 .home-btN {
   display: block;
-  margin: 35px auto 20px auto;
+  margin: 35px auto 20px;
 
   padding: 14px 40px;
   background: linear-gradient(135deg, #d4b896, #c19a6d);
-  
+
   color: white;
   border: none;
   border-radius: 16px;
@@ -166,6 +164,52 @@
   box-shadow: 0 10px 25px rgba(184,154,117,0.5);
 }
 
-.home-btN:hover {
-  background: #b89a75;
+/* =====================================
+           RESPONSIVE DESIGN
+===================================== */
+
+/* TABLET → Better spacing */
+@media (max-width: 900px) {
+  .wish-card {
+    flex-wrap: wrap;
+    padding: 16px;
+  }
+
+  .btns {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+/* MOBILE → Full vertical layout */
+@media (max-width: 600px) {
+  .wish-card {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .btns {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .tocart button,
+  .remove {
+    width: 48%;
+    padding: 12px 0;
+  }
+}
+
+/* SMALL MOBILE → Perfect fit */
+@media (max-width: 420px) {
+  .tocart button,
+  .remove {
+    width: 100%;
+  }
+  
+  .btns {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

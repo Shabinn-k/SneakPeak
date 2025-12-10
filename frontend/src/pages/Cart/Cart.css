@@ -197,3 +197,61 @@
 .home-btN1:hover {
   background: #b89a75;
 }
+
+/* ============================
+       RESPONSIVE
+=============================== */
+
+/* Tablet — Stack items cleanly */
+@media (max-width: 900px) {
+  .cart-card {
+    flex-wrap: wrap;
+    padding: 14px;
+  }
+
+  .cart-last {
+    margin-left: 0;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+/* Mobile — Full stack layout */
+@media (max-width: 600px) {
+  .cart-card {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .cart-last {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .remove-btn {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .cart-info h3 {
+    font-size: 16px;
+  }
+
+  .cart-info span {
+    font-size: 17px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 420px) {
+  .pay-btN {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .home-btN1 {
+    width: 100%;
+  }
+}

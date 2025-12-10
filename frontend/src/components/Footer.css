@@ -1,3 +1,4 @@
+/* MAIN FOOTER WRAPPER */
 .footer {
     width: 100%;
     background: #f9f5ef;
@@ -7,6 +8,7 @@
     align-items: center;
 }
 
+/* MAIN GRID */
 .footer-content {
     width: 100%;
     display: grid;
@@ -14,6 +16,7 @@
     gap: 60px;
 }
 
+/* SECTIONS */
 .footer-content-left,
 .footer-content-center,
 .footer-content-right {
@@ -22,22 +25,18 @@
     gap: 15px;
 }
 
-.footer-content-left {
-    position: relative;
-    top: -30px;
-}
+/* LEFT SECTION */
 .footer-content-left img {
-    margin-bottom: 10px ;
+    margin-bottom: 10px;
 }
 
 .footer-content p {
     font-size: 14px;
     line-height: 1.6;
     color: #4b4b4b;
-    position: relative;
-    top: -40px;
 }
 
+/* HEADINGS */
 .footer-content-center h2,
 .footer-content-right h3 {
     font-size: 20px;
@@ -45,6 +44,7 @@
     color: #2f2f2f;
 }
 
+/* CENTER LINKS */
 .footer-content-center ul {
     list-style: none;
     padding: 0;
@@ -63,6 +63,7 @@
     transform: translateX(5px);
 }
 
+/* RIGHT SECTION */
 .footer-content-right ul {
     list-style: none;
     padding: 0;
@@ -73,6 +74,7 @@
     color: #555;
 }
 
+/* SOCIAL ICONS */
 .footer-social-icons {
     margin-top: 10px;
     display: flex;
@@ -88,6 +90,7 @@
     transform: scale(1.15);
 }
 
+/* LINE */
 .footer hr {
     width: 100%;
     border: none;
@@ -96,23 +99,32 @@
     margin: 30px 0 15px;
 }
 
-
+/* COPYRIGHT */
 .footer-copy {
     font-size: 14px;
     color: black;
 }
 
+/* ==============================
+        TABLET RESPONSIVE
+=============================== */
 @media (max-width: 900px) {
     .footer-content {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
     }
 
+    /* Left section spans full width */
     .footer-content-left {
         grid-column: span 2;
+        text-align: center;
+        align-items: center;
     }
 }
 
+/* ==============================
+        MOBILE RESPONSIVE
+=============================== */
 @media (max-width: 600px) {
     .footer {
         padding: 40px 5vw 20px;
@@ -130,11 +142,31 @@
         align-items: center;
     }
 
+    /* Disable shift effect on mobile */
+    .footer-content-center ul li:hover {
+        transform: translateX(0px);
+    }
+
     .footer-social-icons {
         justify-content: center;
     }
+}
 
-    .footer-content-center ul li:hover {
-        transform: translateX(0px);
+/* ==============================
+   EXTRA SMALL MOBILE (≤ 400px)
+=============================== */
+@media (max-width: 400px) {
+    .footer-content p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .footer-content-center h2,
+    .footer-content-right h3 {
+        font-size: 18px;
+    }
+
+    .footer-social-icons img {
+        width: 22px;
     }
 }

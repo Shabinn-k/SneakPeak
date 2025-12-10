@@ -1,5 +1,5 @@
 {
-  "Admin": [
+  "admin": [
     {
       "id": "1",
       "email": "Admin@gmail.com",
@@ -8,49 +8,57 @@
   ],
   "users": [
     {
-      "id": "fd32",
+      "id": "efbf",
       "name": "shabin",
       "number": 1234567890,
-      "email": "sha@gmail.com",
-      "password": "123456789",
-      "cpass": "123456789",
+      "email": "shabin@gmail.com",
+      "password": "123456",
+      "cpass": "123456",
+      "cart": [
+        {
+          "id": "1",
+          "title": "Gown",
+          "name": "short | minim | veniam",
+          "description": "A minimal and stylish top with a clean design, perfect for effortless everyday wear.",
+          "image": "/products/top1.webp",
+          "price": 2999,
+          "catogory": "women",
+          "quantity": 2
+        }
+      ],
       "wishlist": [
         {
-          "id": "7",
-          "title": "CLOUD VASTRA",
-          "name": "solid | plain | black",
-          "description": "A soft, plain black top with a sleek minimal look, designed for modern everyday fashion.",
-          "image": "/products/top4.webp",
-          "sImage": "/products/top4_1.webp",
-          "price": 2299,
+          "id": "1",
+          "title": "Gown",
+          "name": "short | minim | veniam",
+          "description": "A minimal and stylish top with a clean design, perfect for effortless everyday wear.",
+          "image": "/products/top1.webp",
+          "price": 2999,
           "catogory": "women"
         }
       ],
-      "cart": [
+      "orders": [
         {
-          "id": "2",
-          "title": "SWEATER",
-          "name": "blue | fugi | quis",
-          "description": "A cozy blue sweater with soft texture and a comfortable fit, ideal for cool days.",
-          "image": "/products/blue.webp",
-          "sImage": "/products/brwn.webp",
-          "tImage": "/products/majandha.webp",
-          "price": 1599,
-          "catogory": "women",
-          "quantity": 1
+          "orderId": 1,
+          "date": "10/12/2025",
+          "status": "Delivered",
+          "items": [
+            {
+              "id": "2",
+              "title": "SWEATER",
+              "name": "blue | fugi | quis",
+              "description": "A cozy blue sweater with soft texture and a comfortable fit, ideal for cool days.",
+              "image": "/products/blue.webp",
+              "sImage": "/products/brwn.webp",
+              "tImage": "/products/majandha.webp",
+              "price": 1599,
+              "catogory": "women",
+              "quantity": 2
+            }
+          ],
+          "total": 3278
         }
-      ],
-      "orders": []
-    },
-    {
-      "id": "89cb",
-      "name": "Rabin",
-      "number": 9562817246,
-      "email": "rabin@gmail.com",
-      "password": "qwerty",
-      "cpass": "qwerty",
-      "wishlist": [],
-      "cart": []
+      ]
     }
   ],
   "products": [

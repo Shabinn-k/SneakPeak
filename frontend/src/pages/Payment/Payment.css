@@ -24,6 +24,7 @@
   box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.12);
   animation: fadeIn 0.4s ease;
 }
+
 .user-info {
   background: #fff;
   padding: 15px 20px;
@@ -153,7 +154,7 @@
   font-size: 24px;
 }
 
-/* UPI Box */
+/* UPI/Card Box */
 .upi-box,
 .card-box,
 .cod-box {
@@ -188,7 +189,7 @@
   font-size: 15px;
 }
 
-/* Modern Pay Button */
+/* Pay Button */
 .pay-btn {
   width: 100%;
   margin-top: 28px;
@@ -214,11 +215,63 @@
   cursor: not-allowed;
 }
 
-/* MOBILE */
+/* ============================
+        RESPONSIVE
+============================ */
+
+/* TABLET */
 @media (max-width: 900px) {
   .payment-box {
     flex-direction: column;
-    padding: 20px;
+    padding: 22px;
+    gap: 30px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .payment-box {
+    padding: 18px;
+  }
+
+  .summary-item img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .payment-section h2,
+  .summry h2 {
+    font-size: 20px;
+  }
+
+  .pay-option {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .pay-btn {
+    font-size: 16px;
+    padding: 14px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 420px) {
+  .payment-box {
+    padding: 14px;
+  }
+
+  .summary-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .summary-price {
+    margin-left: 0;
+  }
+
+  .pay-option {
+    flex-direction: row;
   }
 }
 

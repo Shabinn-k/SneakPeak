@@ -1,4 +1,3 @@
-
 /* Clean centered wrapper */
 .detail-page {
   max-width: 1200px;
@@ -10,17 +9,15 @@
   background: #ffffff;
   border-radius: 18px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-
   animation: fadeUp 0.4s ease;
   position: relative;
 }
 
-
+/* Back Button */
 .shop-btn {
   position: absolute;
   top: -30px;
   left: 0;
-
   background: #ffffff;
   padding: 8px 16px;
   border-radius: 6px;
@@ -36,6 +33,7 @@
   transform: translateY(-2px);
 }
 
+/* LEFT SIDE */
 .left {
   flex: 1;
 }
@@ -61,6 +59,17 @@
   display: flex;
   gap: 10px;
   margin-top: 14px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.down-main::-webkit-scrollbar {
+  height: 6px;
+}
+
+.down-main::-webkit-scrollbar-thumb {
+  background: #d8a85b;
+  border-radius: 5px;
 }
 
 .down {
@@ -73,6 +82,7 @@
   border: 2px solid #ffffff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: 0.25s ease;
+  flex-shrink: 0;
 }
 
 .down:hover {
@@ -80,9 +90,7 @@
   border-color: #d8a85b;
 }
 
-/* =========================
-   RIGHT DETAILS
-========================= */
+/* RIGHT SIDE DETAILS */
 .right {
   flex: 1;
   display: flex;
@@ -112,6 +120,7 @@
   color: #d8a85b;
 }
 
+/* Quantity Box */
 .qntity {
   display: flex;
   gap: 15px;
@@ -139,9 +148,7 @@
   color: #4a3727;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS ROW */
 .btn-row {
   display: flex;
   gap: 16px;
@@ -159,7 +166,7 @@
   transition: 0.25s ease;
 }
 
-/* Add to Cart Button */
+/* Add to Cart */
 .add-btn {
   background: #fff;
   border: 2px solid #d8a85b;
@@ -171,7 +178,7 @@
   transform: translateY(-2px);
 }
 
-/* Buy Now Button */
+/* Buy Now */
 .pay {
   background: #d8a85b;
   color: #fff;
@@ -185,8 +192,10 @@
 }
 
 /* =========================
-   RESPONSIVE
+       RESPONSIVE
 ========================= */
+
+/* TABLETS */
 @media (max-width: 900px) {
   .detail-page {
     flex-direction: column;
@@ -195,13 +204,66 @@
   }
 
   .main-img {
-    height: 340px;
+    height: 350px;
+  }
+
+  .btn-row {
+    flex-direction: column;
   }
 }
 
-/* =========================
-   ANIMATION
-========================= */
+/* MOBILE */
+@media (max-width: 600px) {
+  .detail-page {
+    padding: 18px;
+  }
+
+  .right h2 {
+    font-size: 24px;
+  }
+
+  .main-img {
+    height: 280px;
+  }
+
+  .down {
+    width: 70px;
+    height: 70px;
+  }
+
+  .btn-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .add-btn, .pay {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 420px) {
+  .main-img {
+    height: 230px;
+  }
+
+  .down {
+    width: 60px;
+    height: 60px;
+  }
+
+  .right h2 {
+    font-size: 22px;
+  }
+
+  .pp {
+    font-size: 22px;
+  }
+}
+
+/* ANIMATION */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }

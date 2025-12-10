@@ -1,25 +1,41 @@
 import { createContext, useEffect, useState,useContext } from "react";
 import { api } from "../api/Axios";
 import { toast } from "react-toastify";
- 
+import {useNavigate} from "react-router-dom"; 
+
+
 const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = (props) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [admin,setAdmin] = useState(null)
+    const navigate=useNavigate();
 
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
-        if (storedUser) {
-            setUser(JSON.parse(storedUser))
-        }
+        const storedAdmin = localStorage.getItem("admin");
+
+        if(storedUser) setUser(JSON.parse(storedUser))
+        if(storedAdmin) setAdmin(JSON.parse(storedAdmin))
         setLoading(false)
     }, [])
 
     //login
     const login = async (email,password) => {
         try {
+            const adminRes = await api.get("/admin",{params:{email,password}})
+            if(adminRes.data.length> 0){
+                const adminData =  adminRes.data[0];
+
+                setAdmin(adminData);
+                localStorage.setItem("admin",JSON.stringify(adminData))
+                toast.success("Admin Login Succesfull !")
+                navigate("/admin/dashboard")
+                return true
+            }
+
             const res = await api.get("/users", { params: { email } })
             if (!res.data.length) {
                 toast.error("Email not found !");
@@ -47,8 +63,11 @@ export const AuthProvider = (props) => {
     //logout
     const logout = () => {
         setUser(null);
+        setAdmin(null)
         localStorage.removeItem("user");
+        localStorage.removeItem("admin");
         toast.info("Logged out succesfully !")
+        navigate("/")
     }
 
     //register
@@ -77,6 +96,8 @@ export const AuthProvider = (props) => {
 
     const AuthValue = {
         user,
+        admin,
+        setUser,
         loading,
         login,
         logout,

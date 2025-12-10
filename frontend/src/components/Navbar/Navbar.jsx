@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useNavigate ,Link} from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify"; // <-- Import toast
 import "./Navbar.css";
 import image from "../../assets/Image";
@@ -54,33 +54,31 @@ const Navbar = ({ setShowLogin }) => {
           </div>
 
           {user ? (
-  <div className="profile-wrapper">
-    <div 
-      className="profile-circle" 
-      onClick={() => setOpenProfile(prev => !prev)}
-    >
-      {user.name?.charAt(0)?.toUpperCase()}
-    </div>
+            <div className="profile-wrapper">
+              <div
+                className="profile-circle"
+                onClick={() => setOpenProfile(prev => !prev)} >
+                {user.name?.charAt(0)?.toUpperCase()}
+              </div>
 
-    {openProfile && (
-      <div className="profile-dropdown">
-        <div className="dropdown-itemA" onClick={() => navigate("/myOrders")}>
-          View Orders
-        </div>
-        <div className="dropdown-itemB" onClick={logout}>
-          Logout
-        </div>
-      </div>
-    )}
-  </div>
-) : (
-  <button 
-    className="rounded-2xl p-3 w-17 h-7 hover:bg-amber-200" 
-    onClick={() => setShowLogin(true)}
-  >
-    Sign In
-  </button>
-)}
+              {openProfile && (
+                <div className="profile-dropdown">
+                  <div className="dropdown-itemA" onClick={() => navigate("/myOrders")}>
+                    View Orders
+                  </div>
+                  <div className="dropdown-itemB" onClick={logout}>
+                    Logout
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <button
+              className="rounded-2xl p-3 w-17 h-7 hover:bg-amber-200"
+              onClick={() => setShowLogin(true)} >
+              Sign In
+            </button>
+          )}
 
         </div>
 
@@ -93,16 +91,47 @@ const Navbar = ({ setShowLogin }) => {
           <Link to="/shop" onClick={() => setOpenMenu(false)}>Shop</Link>
           <Link to="/about" onClick={() => setOpenMenu(false)}>About Us</Link>
           <hr />
-          <div onClick={() => { handleWish(); setOpenMenu(false); }}>Wishlist</div>
-          <div onClick={() => { handleCart(); setOpenMenu(false); }}>Cart</div>
-
+ 
+          <div onClick={() => { handleWish(); setOpenMenu(false); }}>
+            Wishlist
+          </div>
+ 
+          <div onClick={() => { handleCart(); setOpenMenu(false); }}>
+            Cart
+          </div>
+ 
+          {user && (
+            <div
+              onClick={() => {
+                navigate("/myOrders");
+                setOpenMenu(false);
+              }} >
+              My Orders
+            </div>
+          )}
+ 
           {user ? (
-            <button onClick={() => { logout(); setOpenMenu(false); }} className="logout-btn">Logout</button>
+            <button
+              className="logout-btn"
+              onClick={() => {
+                logout();
+                setOpenMenu(false);
+              }} >
+              Logout
+            </button>
           ) : (
-            <button onClick={() => { setShowLogin(true); setOpenMenu(false); }} className="login-btn">Sign In</button>
+            <button
+              className="login-btn"
+              onClick={() => {
+                setShowLogin(true);
+                setOpenMenu(false);
+              }} >
+              Sign In
+            </button>
           )}
         </div>
       )}
+
     </>
   );
 };
