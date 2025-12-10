@@ -1,4 +1,11 @@
 {
+  "Admin": [
+    {
+      "id": "1",
+      "email": "Admin@gmail.com",
+      "password": "Sootika123"
+    }
+  ],
   "users": [
     {
       "id": "fd32",
@@ -6,7 +13,44 @@
       "number": 1234567890,
       "email": "sha@gmail.com",
       "password": "123456789",
-      "cpass": "123456789"
+      "cpass": "123456789",
+      "wishlist": [
+        {
+          "id": "7",
+          "title": "CLOUD VASTRA",
+          "name": "solid | plain | black",
+          "description": "A soft, plain black top with a sleek minimal look, designed for modern everyday fashion.",
+          "image": "/products/top4.webp",
+          "sImage": "/products/top4_1.webp",
+          "price": 2299,
+          "catogory": "women"
+        }
+      ],
+      "cart": [
+        {
+          "id": "2",
+          "title": "SWEATER",
+          "name": "blue | fugi | quis",
+          "description": "A cozy blue sweater with soft texture and a comfortable fit, ideal for cool days.",
+          "image": "/products/blue.webp",
+          "sImage": "/products/brwn.webp",
+          "tImage": "/products/majandha.webp",
+          "price": 1599,
+          "catogory": "women",
+          "quantity": 1
+        }
+      ],
+      "orders": []
+    },
+    {
+      "id": "89cb",
+      "name": "Rabin",
+      "number": 9562817246,
+      "email": "rabin@gmail.com",
+      "password": "qwerty",
+      "cpass": "qwerty",
+      "wishlist": [],
+      "cart": []
     }
   ],
   "products": [
@@ -27,7 +71,7 @@
       "image": "/products/blue.webp",
       "sImage": "/products/brwn.webp",
       "tImage": "/products/majandha.webp",
-      "price": 3599,
+      "price": 1599,
       "catogory": "women"
     },
     {
@@ -254,23 +298,9 @@
       "catogory": "women"
     }
   ],
-  "cart": [],
-  "wishlist": [
-    {
-      "id": "2",
-      "title": "SWEATER",
-      "name": "blue | fugi | quis",
-      "description": "A cozy blue sweater with soft texture and a comfortable fit, ideal for cool days.",
-      "image": "/products/blue.webp",
-      "sImage": "/products/brwn.webp",
-      "tImage": "/products/majandha.webp",
-      "price": 3599,
-      "catogory": "women"
-    }
-  ],
   "feedbacks": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Priya Sharma",
       "rating": 5,
       "comment": "The quality of the silk saree is amazing! Perfect for my sister's wedding.",
@@ -278,7 +308,7 @@
       " date": "2 weeks ago"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Rajesh Kumar",
       "rating": 4,
       "comment": "Great customer service and fast delivery. The shirt fits perfectly for office wear.",
@@ -286,7 +316,7 @@
       " date": "1 month ago"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Ananya Patel",
       "rating": 5,
       "comment": "Love the dress! Color matched the picture, and the fitting is perfect!",

@@ -24,6 +24,22 @@
   box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.12);
   animation: fadeIn 0.4s ease;
 }
+.user-info {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.user-info h2 {
+  margin-bottom: 10px;
+}
+
+.user-info p {
+  margin: 5px 0;
+  font-size: 15px;
+}
 
 /* ============================
    LEFT SUMMARY SECTION

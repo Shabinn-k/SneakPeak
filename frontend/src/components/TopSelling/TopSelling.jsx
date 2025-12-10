@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
 const TopSelling = ({ setShowLogin }) => {
-    const navigate= useNavigate()
+    const navigate = useNavigate()
     const { user } = useAuth();
     const [prod, setProd] = useState([]);
     const { addToCart, addToWish } = useContext(CartContext);
@@ -45,7 +45,9 @@ const TopSelling = ({ setShowLogin }) => {
             <div className="group-1">
                 {prod.slice(0, 4).map((item) => (
                     <div key={item.id} className="card">
-                        <img src={item.image} alt={item.title} onClick={()=>navigate(`/detail/${item.id}`)}/>
+                        <div className="card-img-box">
+                            <img src={item.image} alt={item.title} onClick={() => navigate(`/detail/${item.id}`)} />
+                        </div>
                         <h3>{item.title}</h3>
                         <div className="card-icons">
                             <FaHeart className="wish-icon"
@@ -63,11 +65,13 @@ const TopSelling = ({ setShowLogin }) => {
             <div className="group-2">
                 {prod.slice(4, 8).map((item) => (
                     <div key={item.id} className="card">
-                        <img src={item.image} alt={item.title} onClick={()=>navigate(`/detail/${item.id}`)}/>
+                        <div className="card-img-box">
+                            <img src={item.image} alt={item.title} onClick={() => navigate(`/detail/${item.id}`)} />
+                        </div>
                         <h3>{item.title}</h3>
                         <div className="card-icons">
                             <FaHeart className="wish-icon"
-                                onClick={() => { if (handleWish()) addToWish(item); }}/>
+                                onClick={() => { if (handleWish()) addToWish(item); }} />
                             <FaShoppingCart className="cart-icon"
                                 onClick={() => { if (handleCart()) addToCart(item); }} />
                         </div>

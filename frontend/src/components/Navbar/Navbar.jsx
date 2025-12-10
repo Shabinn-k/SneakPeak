@@ -11,6 +11,7 @@ const Navbar = ({ setShowLogin }) => {
   const { user, logout } = useAuth();
   const { cartItems, wishItems } = useContext(CartContext);
   const [openMenu, setOpenMenu] = useState(false);
+  const [openProfile, setOpenProfile] = useState(false);
 
   const handleCart = () => {
     if (!user) {
@@ -53,15 +54,34 @@ const Navbar = ({ setShowLogin }) => {
           </div>
 
           {user ? (
-            <div className="user-box">
-              <span className="username">Hy, {user.name}</span>
-              <button className="logout-btn" onClick={logout}>Logout</button>
-            </div>
-          ) : (
-            <button className="rounded-2xl p-3 w-17 h-7 hover:bg-amber-200" onClick={() => setShowLogin(true)}>
-              Sign In
-            </button>
-          )}
+  <div className="profile-wrapper">
+    <div 
+      className="profile-circle" 
+      onClick={() => setOpenProfile(prev => !prev)}
+    >
+      {user.name?.charAt(0)?.toUpperCase()}
+    </div>
+
+    {openProfile && (
+      <div className="profile-dropdown">
+        <div className="dropdown-itemA" onClick={() => navigate("/myOrders")}>
+          View Orders
+        </div>
+        <div className="dropdown-itemB" onClick={logout}>
+          Logout
+        </div>
+      </div>
+    )}
+  </div>
+) : (
+  <button 
+    className="rounded-2xl p-3 w-17 h-7 hover:bg-amber-200" 
+    onClick={() => setShowLogin(true)}
+  >
+    Sign In
+  </button>
+)}
+
         </div>
 
         <div className="mobile-menu-btn" onClick={() => setOpenMenu(!openMenu)}>☰</div>

@@ -8,8 +8,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Payment = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
-  const { cartItems,removeCart } = useContext(CartContext);
+  const { cartItems, clearCart } = useContext(CartContext);
 
+  // Buy Now = one item | Cart Checkout = all items
   const buyNowItem = state?.product
     ? [{ ...state.product, quantity: state.quant }]
     : cartItems;
@@ -21,29 +22,40 @@ const Payment = () => {
 
   // Calculate totals
   const subTotal = buyNowItem.reduce(
-    (acc, item) => acc + item.price * item.quantity,0
+    (acc, item) => acc + item.price * item.quantity,
+    0
   );
 
   const shipping = 80;
   const total = subTotal + shipping;
 
-  // Payment Handler
-  const handlePay = () => {
+  // -------- FINAL PAYMENT HANDLER ----------
+  const handleCompletePayment = async () => {
     if (!paymentMethod) {
       toast.error("Please select a payment method!");
       return;
     }
-       setLoading(true);
-       setTimeout(() => {
-         toast.success("Payment Successful! Order Placed.");
-         navigate("/");
-        }, 1000);
-      };
+
+    setLoading(true);
+
+    setTimeout(async () => {
+      toast.success("Payment Successful! Order Placed.");
+
+      // Clear cart ONLY if order came from the cart
+      if (!state?.product) {
+        await clearCart();
+      }
+
+      // Redirect to My Orders page
+      navigate("/myOrders");
+    }, 1000);
+  };
 
   return (
     <div className="payment-page">
       <div className="payment-box">
 
+        {/* -------- ORDER SUMMARY -------- */}
         <div className="summry">
           <h2>Order Summary</h2>
 
@@ -54,78 +66,109 @@ const Payment = () => {
               <div>
                 <h4>{item.title}</h4>
                 <p>Qty: {item.quantity}</p>
-                <p> ₹{item.price} × {item.quantity}</p>
+                <p>₹{item.price} × {item.quantity}</p>
               </div>
 
-              <span className="summary-price"> ₹{item.price * item.quantity} </span>
+              <span className="summary-price">₹{item.price * item.quantity}</span>
             </div>
           ))}
 
           <div className="summary-total">
             <p>Subtotal: <span>₹{subTotal}</span></p>
-            <p> Shipping: <span>₹{shipping}</span></p>
-            <h3> Total: <span>₹{total}</span></h3>
+            <p>Shipping: <span>₹{shipping}</span></p>
+            <h3>Total: <span>₹{total}</span></h3>
           </div>
         </div>
 
+        {/* -------- PAYMENT METHODS -------- */}
         <div className="payment-section">
           <h2>Select Payment Method</h2>
 
           <div className="payment-options">
-            <div className={`pay-option ${paymentMethod === "upi" ? "active" : "" }`}
-              onClick={() => setPaymentMethod("upi")}>
+
+            <div
+              className={`pay-option ${paymentMethod === "upi" ? "active" : ""}`}
+              onClick={() => setPaymentMethod("upi")}
+            >
               <FaGooglePay size={28} />
               <span>Google Pay / UPI</span>
             </div>
 
-            <div className={`pay-option ${paymentMethod === "card" ? "active" : ""}`}
-              onClick={() => setPaymentMethod("card")}>
+            <div
+              className={`pay-option ${paymentMethod === "card" ? "active" : ""}`}
+              onClick={() => setPaymentMethod("card")}
+            >
               <FaCreditCard size={24} />
               <span>Debit / Credit Card</span>
             </div>
 
-            <div className={`pay-option ${paymentMethod === "cod" ? "active" : ""}`}
-              onClick={() => setPaymentMethod("cod")}>
+            <div
+              className={`pay-option ${paymentMethod === "cod" ? "active" : ""}`}
+              onClick={() => setPaymentMethod("cod")}
+            >
               <span className="cod-icon">💵</span>
               <span>Cash on Delivery</span>
             </div>
+
           </div>
 
+          {/* -------- UPI BOX -------- */}
           {paymentMethod === "upi" && (
             <div className="upi-box">
               <h4>Enter UPI ID</h4>
-              <input type="text" placeholder="yourname@upi"  value={upi}
-               onChange={(e) => setUpi(e.target.value)} />
+              <input
+                type="text"
+                placeholder="yourname@upi"
+                value={upi}
+                onChange={(e) => setUpi(e.target.value)}
+              />
               <p className="small-text">You will be redirected to your UPI app</p>
             </div>
           )}
 
+          {/* -------- CARD BOX -------- */}
           {paymentMethod === "card" && (
             <div className="card-box">
               <h4>Card Details</h4>
 
-              <input type="text" placeholder="Card Number" value={card.number}
-                onChange={(e) => setCard({ ...card, number: e.target.value })}/>
+              <input
+                type="text"
+                placeholder="Card Number"
+                value={card.number}
+                onChange={(e) => setCard({ ...card, number: e.target.value })}
+              />
 
-              <input type="text" placeholder="Cardholder Name" value={card.name}
-                onChange={(e) => setCard({ ...card, name: e.target.value })}/>
+              <input
+                type="text"
+                placeholder="Cardholder Name"
+                value={card.name}
+                onChange={(e) => setCard({ ...card, name: e.target.value })}
+              />
 
-              <input type="text" placeholder="MM/YY" value={card.expiry}
-              onChange={(e) => setCard({ ...card, expiry: e.target.value })}/>
+              <input
+                type="text"
+                placeholder="MM/YY"
+                value={card.expiry}
+                onChange={(e) => setCard({ ...card, expiry: e.target.value })}
+              />
             </div>
           )}
 
-
+          {/* -------- COD BOX -------- */}
           {paymentMethod === "cod" && (
             <div className="cod-box">
               <p>Pay when your order arrives. COD charges ₹20 apply.</p>
             </div>
           )}
 
-          <button className={`pay-btn ${loading ? "loading" : ""}`}
-            onClick={()=>{handlePay();removeCart(item.id)}}>
-            {loading ? "buying.." : `Pay ₹ ${total}`}
+          {/* -------- PAY BUTTON -------- */}
+          <button
+            className={`pay-btn ${loading ? "loading" : ""}`}
+            onClick={handleCompletePayment}
+          >
+            {loading ? "Processing..." : `Pay ₹${total}`}
           </button>
+
         </div>
       </div>
     </div>
