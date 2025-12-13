@@ -138,6 +138,30 @@
   color: #a39a8c;
   padding: 20px;
 }
+
+/* Stock status */
+.stock {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2e7d32; /* green */
+  margin: 6px 0;
+}
+
+.stock.out {
+  color: #c62828; /* red */
+}
+
+/* Disabled Add to Cart */
+.addCart:disabled {
+  background: #d6c6b2;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.addCart:disabled:hover {
+  background: #d6c6b2;
+}
+
 @media (max-width: 600px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);

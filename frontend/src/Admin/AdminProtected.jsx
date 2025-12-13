@@ -4,7 +4,7 @@ const AdminProtected = ({ children }) => {
   const admin = localStorage.getItem("admin");
 
   if (!admin) {
-    return <Navigate to="/admin/login" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return children;

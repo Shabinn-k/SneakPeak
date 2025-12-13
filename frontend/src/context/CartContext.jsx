@@ -84,7 +84,7 @@ const CartContextProvider = (props) => {
 
   const clearCart = async () => {
   setCartItems([]);  
-  await updateUserData({ cart: [] });  // <-- updates DB for that user
+  await updateUserData({ cart: [] });  
 };
 
   //WISHLIST 

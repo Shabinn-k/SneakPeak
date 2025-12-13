@@ -1,0 +1,131 @@
+Page wrapper
+.user-detail {
+  padding: 40px;
+  background: #faf7f2; /* light beige background */
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Page heading */
+.user-detail h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #4b3a26;
+  margin-bottom: 25px;
+}
+
+/* User card */
+.user-card {
+  background: #ffffff;
+  width: 380px;
+  padding: 25px 28px;
+  border-radius: 18px;
+  border: 1px solid #e6d5bd;
+  box-shadow: 0 6px 18px rgba(210, 180, 140, 0.25);
+  transition: 0.3s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(210, 180, 140, 0.35);
+}
+
+/* Text inside card */
+.user-card p {
+  font-size: 15px;
+  color: #5e4a32;
+  margin: 12px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Status text */
+.active {
+  color: #3f7d4c;
+  font-weight: 600;
+  background: #eef7f0;
+  padding: 3px 10px;
+  border-radius: 8px;
+}
+
+.blocked {
+  color: #a94442;
+  font-weight: 600;
+  background: #fbeeee;
+  padding: 3px 10px;
+  border-radius: 8px;
+}
+
+/* Block button */
+.block-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #e6b8a2; /* beige-red */
+  color: #4b3a26;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.block-btn:hover {
+  background: #d9a38a;
+}
+
+/* Unblock button */
+.unblock-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #cfe6d6; /* beige-green */
+  color: #2f5d3a;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.unblock-btn:hover {
+  background: #b9d9c4;
+}
+
+/* Disabled state */
+.block-btn:disabled,
+.unblock-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Back button */
+.back-btn {
+  margin-top: 25px;
+  padding: 10px 22px;
+  background: #fff7ec;
+  color: #4b3a26;
+  border: 1px solid #e6d5bd;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #f1e6d6;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .user-card {
+    width: 100%;
+  }
+
+  .user-detail {
+    padding: 20px;
+  }
+}

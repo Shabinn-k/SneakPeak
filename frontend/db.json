@@ -8,57 +8,15 @@
   ],
   "users": [
     {
-      "id": "efbf",
+      "id": "1",
       "name": "shabin",
       "number": 1234567890,
       "email": "shabin@gmail.com",
       "password": "123456",
       "cpass": "123456",
-      "cart": [
-        {
-          "id": "1",
-          "title": "Gown",
-          "name": "short | minim | veniam",
-          "description": "A minimal and stylish top with a clean design, perfect for effortless everyday wear.",
-          "image": "/products/top1.webp",
-          "price": 2999,
-          "catogory": "women",
-          "quantity": 2
-        }
-      ],
-      "wishlist": [
-        {
-          "id": "1",
-          "title": "Gown",
-          "name": "short | minim | veniam",
-          "description": "A minimal and stylish top with a clean design, perfect for effortless everyday wear.",
-          "image": "/products/top1.webp",
-          "price": 2999,
-          "catogory": "women"
-        }
-      ],
-      "orders": [
-        {
-          "orderId": 1,
-          "date": "10/12/2025",
-          "status": "Delivered",
-          "items": [
-            {
-              "id": "2",
-              "title": "SWEATER",
-              "name": "blue | fugi | quis",
-              "description": "A cozy blue sweater with soft texture and a comfortable fit, ideal for cool days.",
-              "image": "/products/blue.webp",
-              "sImage": "/products/brwn.webp",
-              "tImage": "/products/majandha.webp",
-              "price": 1599,
-              "catogory": "women",
-              "quantity": 2
-            }
-          ],
-          "total": 3278
-        }
-      ]
+      "cart": [],
+      "wishlist": [],
+      "orders": []
     }
   ],
   "products": [
@@ -69,7 +27,8 @@
       "description": "A minimal and stylish top with a clean design, perfect for effortless everyday wear.",
       "image": "/products/top1.webp",
       "price": 2999,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "2",
@@ -80,7 +39,8 @@
       "sImage": "/products/brwn.webp",
       "tImage": "/products/majandha.webp",
       "price": 1599,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "3",
@@ -89,7 +49,8 @@
       "description": "A graceful flared kurta in elegant black, suitable for festive and casual wear.",
       "image": "/products/top2.webp",
       "price": 2599,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "4",
@@ -100,7 +61,8 @@
       "sImage": "/products/lightgrnSari.webp",
       "tImage": "/products/grnSari.webp",
       "price": 1099,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "5",
@@ -110,7 +72,8 @@
       "image": "/products/top3.webp",
       "sImage": "/products/top3_1.webp",
       "price": 2599,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "6",
@@ -120,7 +83,8 @@
       "image": "/products/shawlBl.webp",
       "sImage": "/products/redshawl.webp",
       "price": 1499,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "7",
@@ -130,18 +94,20 @@
       "image": "/products/top4.webp",
       "sImage": "/products/top4_1.webp",
       "price": 2299,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "8",
       "title": "THEYYAM MUND",
       "name": "red | mundu | labore",
-      "description": "A vibrant  Theyyam-inspired mundu with a bold cultural aesthetic.",
+      "description": "A vibrant Theyyam-inspired mundu with a bold cultural aesthetic.",
       "image": "/products/theyyam_dr.webp",
       "sImage": "/products/theyyam_r.webp",
       "tImage": "/products/theyyam_y.webp",
       "price": 1499,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "9",
@@ -151,7 +117,8 @@
       "image": "/products/shop2.webp",
       "sImage": "/products/shop2_1.webp",
       "price": 1999,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "10",
@@ -161,7 +128,8 @@
       "image": "/products/shop3.webp",
       "sImage": "/products/shop3_1.webp",
       "price": 1299,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "11",
@@ -171,7 +139,8 @@
       "image": "/products/shop4.webp",
       "sImage": "/products/shop4_1.webp",
       "price": 1399,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "12",
@@ -181,7 +150,8 @@
       "image": "/products/shop5.webp",
       "sImage": "/products/shop5_1.webp",
       "price": 1199,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "13",
@@ -191,7 +161,8 @@
       "image": "/products/shop6_1.webp",
       "sImage": "/products/shop6.webp",
       "price": 1499,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "14",
@@ -201,7 +172,8 @@
       "image": "/products/shop7.webp",
       "sImage": "/products/shop7_1.webp",
       "price": 1299,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "15",
@@ -211,7 +183,8 @@
       "image": "/products/shop8.webp",
       "sImage": "/products/shop8_1.webp",
       "price": 1399,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "16",
@@ -221,7 +194,8 @@
       "image": "/products/shop9.webp",
       "sImage": "/products/shop9_1.webp",
       "price": 1199,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "17",
@@ -231,7 +205,8 @@
       "image": "/products/shop10.webp",
       "sImage": "/products/shop10_1.webp",
       "price": 1499,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "18",
@@ -241,7 +216,8 @@
       "image": "/products/shop11.webp",
       "sImage": "/products/shop11_1.webp",
       "price": 1599,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "19",
@@ -252,7 +228,8 @@
       "sImage": "/products/stripsV.webp",
       "tImage": "/products/stripsG.webp",
       "price": 999,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "20",
@@ -263,7 +240,8 @@
       "sImage": "/products/redpatrnsari.webp",
       "tImage": "/products/meroonshawl.webp",
       "price": 1799,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "21",
@@ -273,7 +251,8 @@
       "image": "/products/shop12.webp",
       "sImage": "/products/shop12_1.webp",
       "price": 1399,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "22",
@@ -282,7 +261,8 @@
       "description": "A soft and breathable top crafted for everyday comfort with a smooth modern silhouette.",
       "image": "/products/shop13.webp",
       "price": 1299,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "23",
@@ -293,7 +273,8 @@
       "sImage": "/products/shop14_1.webp",
       "tImage": "/products/shop14_2.webp",
       "price": 1799,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     },
     {
       "id": "24",
@@ -303,7 +284,8 @@
       "image": "/products/shop15.webp",
       "sImage": "/products/shop15_1.webp",
       "price": 1399,
-      "catogory": "women"
+      "catogory": "women",
+      "stock": true
     }
   ],
   "feedbacks": [
@@ -338,6 +320,13 @@
       "comment": "nice product",
       "product": "General",
       "date": "Just now"
+    },
+    {
+      "id": "21a4",
+      "name": "rifana sherin",
+      "rating": 5,
+      "comment": "good product and the cloth is so soft and also the delivery agent behaviour is good👍👍👍",
+      "product": "General"
     }
   ]
 }

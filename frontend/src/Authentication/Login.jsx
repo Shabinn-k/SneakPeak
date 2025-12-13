@@ -20,7 +20,7 @@ const Login = ({ setShowLogin }) => {
   return (
     <div className='login-popup'>
       <form onSubmit={handleSubmit} className='login-popup-container'>
-        
+
         <div className="login-poup-title">
           <h2 className='font-extrabold text-4xl'>Sign In</h2>
           <h2 onClick={() => setShowLogin(false)} className='close-btn font-bold text-2xl'>
