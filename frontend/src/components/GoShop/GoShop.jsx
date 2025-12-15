@@ -2,6 +2,7 @@ import React from 'react'
 import "./GoShop.css";
 import { useNavigate } from 'react-router-dom';
 import GoSh from "../../assets/GoShop.mp4"
+
  const GoShop = () => {
         const navigate= useNavigate()
     return (

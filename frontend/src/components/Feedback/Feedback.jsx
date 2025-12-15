@@ -3,57 +3,57 @@ import "./Feedback.css";
 import { api } from "../../api/Axios";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../Authentication/AuthContext";
+import { toast } from "react-toastify";
 
-
-const Feedback = ({setShowLogin}) => {
+const Feedback = ({ setShowLogin }) => {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [feedbacks, setFeedbacks] = useState([]);
-    const {user} =useAuth();
-  // Load feedback data
+
+  // Fetch ONLY approved feedbacks
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await api.get("/feedbacks");
+        const res = await api.get("/feedbacks?status=approved");
         setFeedbacks(res.data);
       } catch (error) {
         console.log("Error:", error);
       }
     };
-
     fetchData();
   }, []);
 
-     const handleFeed = () => {
-            if (!user) {
-                setShowLogin(true);
-                toast.warn("Please login to add review !");
-                return false;
-            }
-            return true;
-        };  
+  // Handle write review
+  const handleFeed = () => {
+    if (!user) {
+      setShowLogin(true);
+      toast.warn("Please login to add review!");
+      return;
+    }
+    navigate("/feedback");
+  };
 
-  // Calculate average rating
+  // Average rating
   const averageRating =
     feedbacks.length > 0
-      ? (feedbacks.reduce((total, item) => total + item.rating, 0) / feedbacks.length).toFixed(1)
+      ? (
+          feedbacks.reduce((sum, item) => sum + item.rating, 0) /
+          feedbacks.length
+        ).toFixed(1)
       : 0;
 
   return (
     <div className="feedback-container">
-
       <h2>Customer Reviews</h2>
       <p>What our customers say about our products</p>
 
-      {/* List of Feedbacks */}
+      {/* Feedback Cards */}
       <div className="feedback-cards">
         {feedbacks.map((item) => (
           <div key={item.id} className="feedback-card">
-
             <div className="user-info">
-              <div className="user-avatar">{item.name[0]}</div>
-              <div>
-                <h4>{item.name}</h4>
-                </div>
+              <div className="user-avatar">{item.name?.[0]}</div>
+              <h4>{item.name}</h4>
             </div>
 
             <div className="stars">
@@ -73,6 +73,7 @@ const Feedback = ({setShowLogin}) => {
         ))}
       </div>
 
+      {/* Average Rating */}
       <div className="average-rating">
         <div className="rating-circle">
           <span className="rating-number">{averageRating}</span>
@@ -85,10 +86,9 @@ const Feedback = ({setShowLogin}) => {
         </div>
       </div>
 
-      <button className="write-review-btn" onClick={() =>{handleFeed(); navigate("/feedback")}}>
+      <button className="write-review-btn" onClick={handleFeed}>
         Write a Review
       </button>
-
     </div>
   );
 };

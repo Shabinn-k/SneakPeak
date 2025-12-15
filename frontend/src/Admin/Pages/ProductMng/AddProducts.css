@@ -68,7 +68,9 @@
   cursor: pointer;
   transition: 0.3s ease;
 }
-
+.st{
+  accent-color: #a3845f; 
+}
 .save-btn:hover {
   background: #b58c64;
 }

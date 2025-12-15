@@ -10,5 +10,4 @@ const AdminProtected = ({ children }) => {
   return children;
 };
 
-
-export default AdminProtected
+export default AdminProtected;

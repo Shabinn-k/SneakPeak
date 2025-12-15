@@ -10,11 +10,12 @@ import About from "./pages/About.jsx";
 
 import AdminProtected from "./Admin/AdminProtected.jsx";
 import Dashboard from "./Admin/Pages/Dashboard/Dashboard.jsx";
-
 import AdminProducts from "./Admin/Pages/ProductMng/AdminProducts.jsx";
 import ProductDetail from "./Admin/Pages/ProductMng/ProductDetail.jsx";
 import AddProduct from "./Admin/Pages/ProductMng/AddProducts.jsx";
 import EditProduct from "./Admin/Pages/ProductMng/EditProducts.jsx";
+import UserDetail from "./Admin/Pages/UserMng/UserDetail.jsx";
+import AdminFeedback from "./Admin/Pages/FeedBack/AdminFeedback.jsx";
 
 const Cart = lazy(() => import("./pages/Cart/Cart.jsx"));
 const Wishlist = lazy(() => import("./pages/Wishlist/Wishlist.jsx"));
@@ -78,6 +79,20 @@ const MainRouter = () => {
             element={
               <AdminProtected>
                 <ProductDetail />
+              </AdminProtected>
+            }/>
+
+          <Route path="/admin/users"
+            element={
+              <AdminProtected>
+                <UserDetail/>
+              </AdminProtected>
+            }/>
+
+          <Route path="/admin/feedback"
+            element={
+              <AdminProtected>
+                <AdminFeedback/>
               </AdminProtected>
             }/>
  

@@ -110,6 +110,7 @@
   margin: 15px 0;
   font-weight: 600;
   color: #4b3a26;
+  accent-color: #a3845f; 
 }
 
 .stock-toggle input {

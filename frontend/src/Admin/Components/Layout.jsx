@@ -10,7 +10,6 @@ const Layout = ({ children }) => {
   return (
     <div className="admin-wrapper">
 
-      {/* SIDEBAR */}
       <aside className="admin-sidebar">
         <h2 className="admin-logo">Admin</h2>
 
@@ -20,19 +19,18 @@ const Layout = ({ children }) => {
               Dashboard
             </Link>
           </li>
-
-          {/* FIXED */}
+ 
           <li>
             <Link className="link-items1" to="/admin/products/">
               Products
             </Link>
           </li>
  
-          {/* <li>
-            <Link className="link-items1" to="/admin/users/:id">
+          <li>
+            <Link className="link-items1" to="/admin/users">
               Users
             </Link>
-          </li> */}
+          </li>
 
           <li>
             <Link className="link-items1" to="/admin/orders">

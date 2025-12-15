@@ -64,6 +64,89 @@
   gap: 18px;
 }
 
+
+
+/* Form card */
+.writefeed-form {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 30px 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  text-align: center;
+}
+
+/* Heading */
+.writefeed-form h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4b3a26;
+  margin-bottom: 20px;
+}
+
+/* Stars */
+.rating-stars {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.star {
+  font-size: 28px;
+  cursor: pointer;
+  color: #d2b48c;
+  transition: 0.2s ease;
+}
+
+.star:hover {
+  transform: scale(1.15);
+}
+
+.star.filled {
+  color: #caa76d;
+}
+
+/* Textarea */
+.writefeed-form textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e6d5bd;
+  /* background: #fffaf3; */
+  color: #4b3a26;
+  font-size: 14px;
+  resize: none;
+  outline: none;
+  margin-bottom: 18px;
+}
+
+.writefeed-form textarea:focus {
+  border-color: #caa76d;
+}
+
+/* Submit button */
+.writefeed-form button {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 10px;
+  background: #caa76d;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.writefeed-form button:hover {
+  background: #b89558;
+}
 /* INPUTS */
 .input-box {
   width: 100%;

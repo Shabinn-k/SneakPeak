@@ -85,7 +85,7 @@ const AddProduct = () => {
 
                 <div className="stock-toggle">
                     <label>
-                        <input type="checkbox" checked={product.stock}
+                        <input className="st" type="checkbox" checked={product.stock} 
                             onChange={e => setProduct({ ...product, stock: e.target.checked })} />
                         In Stock
                     </label>

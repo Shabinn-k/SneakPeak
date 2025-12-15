@@ -16,6 +16,27 @@
       "cpass": "123456",
       "cart": [],
       "wishlist": [],
+      "orders": [],
+      "status": "active",
+      "acc": "blocked"
+    },
+    {
+      "id": "5fd2",
+      "name": "neymar",
+      "number": 1234567890,
+      "email": "neymar@gmail.com",
+      "password": "qqqqqq",
+      "cpass": "qqqqqq",
+      "acc": "pending"
+    },
+    {
+      "id": "7ab1",
+      "name": "BINSHA K",
+      "number": 7034166691,
+      "email": "binshak07@gmail.com",
+      "password": "binsha#07",
+      "cpass": "binsha#07",
+      "acc": "active",
       "orders": []
     }
   ],
@@ -290,43 +311,21 @@
   ],
   "feedbacks": [
     {
-      "id": "1",
-      "name": "Priya Sharma",
-      "rating": 5,
-      "comment": "The quality of the silk saree is amazing! Perfect for my sister's wedding.",
-      "product": "Silk Saree",
-      " date": "2 weeks ago"
-    },
-    {
-      "id": "2",
-      "name": "Rajesh Kumar",
-      "rating": 4,
-      "comment": "Great customer service and fast delivery. The shirt fits perfectly for office wear.",
-      "product": "Formal Shirt",
-      " date": "1 month ago"
-    },
-    {
-      "id": "3",
-      "name": "Ananya Patel",
-      "rating": 5,
-      "comment": "Love the dress! Color matched the picture, and the fitting is perfect!",
-      "product": "Designer Dress",
-      " date": "3 days ago"
-    },
-    {
       "id": "5aca",
       "name": "shabin",
       "rating": 3,
-      "comment": "nice product",
+      "review": "nice product",
       "product": "General",
-      "date": "Just now"
+      "date": "Just now",
+      "feed": "approved"
     },
     {
       "id": "21a4",
       "name": "rifana sherin",
       "rating": 5,
-      "comment": "good product and the cloth is so soft and also the delivery agent behaviour is good👍👍👍",
-      "product": "General"
+      "review": "good product and the cloth is so soft and also the delivery agent behaviour is good👍👍👍",
+      "product": "General",
+      "feed": "approved"
     }
   ]
 }

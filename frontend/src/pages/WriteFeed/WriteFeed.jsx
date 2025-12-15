@@ -3,70 +3,67 @@ import { toast } from "react-toastify";
 import "./WriteFeed.css";
 import { api } from "../../api/Axios";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../Authentication/AuthContext";
 
 const WriteFeed = () => {
-    const [name, setName] = useState("");
-    const [rating, setRating] = useState(0);
-    const [comment, setComment] = useState("");
-    const navigate = useNavigate()
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+  const { user } = useAuth();
+  const navigate = useNavigate();
 
-        if (!name || !rating || !comment) {
-            toast.error("All fields are required!");
-            return;
-        }
+  const [rating, setRating] = useState(0);
+  const [review, setreview] = useState("");
 
-        const newFeedback = {
-            name,
-            rating,
-            comment,
-            product: "General"
-        };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-        try {
-            await api.post("/feedbacks", newFeedback);
-            toast.success("Review submitted!");
-            // clear form
-            setName("");
-            setRating(0);
-            setComment("");
-        } catch (err) {
-            console.log(err);
-            toast.error("Failed to submit review");
-        }
+    if (!rating || !review) {
+      toast.error("All fields are required!");
+      return;
+    }
+
+    //   ALWAYS pending first
+    const feedback = {
+      name: user?.name || "",
+      rating,
+      review,
+      feed: "pending"   
     };
 
-    return (
-        <div className="writefeed-container">
+    try {
+      await api.post("/feedbacks", feedback);
+      toast.success("Feedback sent for admin approval!");
+      navigate("/");
+    } catch (err) {
+      toast.error("Something went wrong!");
+    }
+  };
 
-            <div className="writefeed-page">
-                <h2>Write a Review</h2>
+  return (
+    <div className="writefeed-container">
+      <form onSubmit={handleSubmit} className="writefeed-form">
+        <h2>Write a Review</h2>
 
-                <form className="writefeed-form" onSubmit={handleSubmit}>
-
-                    <input type="text" placeholder="Your Name"
-                        className="input-box" value={name}
-                        onChange={(e) => setName(e.target.value)} />
-
-
-                    <div className="rating-stars">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                            <span key={star} className={star <= rating ? "star filled" : "star"}
-                                onClick={() => setRating(star)}>★</span>
-                        ))}
-                    </div>
-
-                    <textarea placeholder="Write your review here..."
-                        className="input-box textarea" value={comment}
-                        onChange={(e) => setComment(e.target.value)} />
-
-                    <button type="submit" className="submit-btn" onClick={()=>navigate("/")}>
-                        Submit Review</button>
-                </form>
-            </div>
+        <div className="rating-stars">
+          {[1, 2, 3, 4, 5].map(star => (
+            <span
+              key={star}
+              className={star <= rating ? "star filled" : "star"}
+              onClick={() => setRating(star)}
+            >
+              ★
+            </span>
+          ))}
         </div>
-    );
+
+        <textarea
+          placeholder="Write your feedback..."
+          value={review}
+          onChange={(e) => setreview(e.target.value)}
+        />
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
 };
 
 export default WriteFeed;
