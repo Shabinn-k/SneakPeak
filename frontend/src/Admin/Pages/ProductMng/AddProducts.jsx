@@ -15,7 +15,6 @@ const AddProduct = () => {
         sImage: "",
         tImage: "",
         price: "",
-        catogory: "",
         stock: true
     });
 
@@ -60,13 +59,6 @@ const AddProduct = () => {
                     <input type="number" value={product.price}
                         onChange={e => setProduct({ ...product, price: e.target.value })} />
                 </div>
-
-                <div className="form-group">
-                    <label>Category *</label>
-                    <input placeholder="women / men" value={product.catogory}
-                        onChange={e => setProduct({ ...product, catogory: e.target.value })} />
-                </div>
-
 
                 <div className="form-group">
                     <label>Main Image URL *</label>

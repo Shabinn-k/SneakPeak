@@ -76,7 +76,6 @@ const TopSelling = ({ setShowLogin }) => {
                                 onClick={() => { if (handleCart()) addToCart(item); }} />
                         </div>
                         <h2>{item.name}</h2>
-                        <p>{item.catogory}</p>
                         <span>₹ {item.price}</span>
                     </div>
                 ))}

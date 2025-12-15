@@ -18,8 +18,7 @@ const Wishlist = () => {
                             <img src={item.image} alt={item.title} width={150} />
                             <div className="wish-info">
                                 <h3>{item.title}</h3>
-                                <h2>{item.name}</h2>
-                                <p>{item.catogory}</p>
+                                <h2>{item.name}</h2> 
                                 <span>₹ {item.price}</span>
                             </div>
 

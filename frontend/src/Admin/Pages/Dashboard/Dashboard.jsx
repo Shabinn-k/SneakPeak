@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import Layout from "../../Components/Layout";
 import { api } from "../../../api/Axios";
 import "./Dashboard.css";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-// STATES
+  const navigate=useNavigate()
   const [products, setProducts] = useState([]);
   const [users, setUsers] = useState([]);
   const [orders, setOrders] = useState([]);
@@ -14,21 +15,19 @@ const Dashboard = () => {
   const loadDashboardData = async () => {
     const productRes = await api.get("/products");
     const userRes = await api.get("/users");
+    const feedbackRes= await api.get("/feedbacks")
 
     setProducts(productRes.data);
     setUsers(userRes.data);
+    setFeedbacks(feedbackRes.data);
 
 // Collect all orders & feedbacks from users
     let allOrders = [];
-    let allFeedback = [];
-
     userRes.data.forEach((user) => {
-      if (user.orders) allOrders = [...allOrders, ...user.orders];
-      if (user.feedback) allFeedback = [...allFeedback, ...user.feedback];
-    });
+      if (user.orders) allOrders = [...allOrders, ...user.orders]; 
+        });
 
     setOrders(allOrders);
-    setFeedbacks(allFeedback);
   };
 
   useEffect(() => {
@@ -40,25 +39,12 @@ const Dashboard = () => {
   const totalUsers = users.length;
   const totalOrders = orders.length;
 
-// CALCULATE TOTAL REVENUE 
-  let totalRev = 0;
+const totalRev=orders.reduce(
+  (sum,order)=>sum+Number(order.total ||0),0
+)
 
-  orders.forEach((order) => {
-// Case 1: Order has a "total" field
-    if (order.total) {
-      totalRev += order.total;
-    }
-
-// Case 2: Order has items array → calculate total
-    if (order.items) {
-      order.items.forEach((item) => {
-        totalRev += item.price * (item.qty || 1);
-      });
-    }
-  });
-
-  const pendingOrders = orders.filter((o) => o.status !== "Delivered").length;
-  const pendingFeedback = feedbacks.filter((f) => f.status === "pending").length;
+  const pendingOrders = orders.filter((order) => order.track === "Pending").length;
+  const pendingFeedback = feedbacks.filter((f) => f.feed=== "pending").length;
 
 // UI 
   return (
@@ -70,17 +56,17 @@ const Dashboard = () => {
 {/* TOP CARDS */}
         <div className="dash-cards">
           
-          <div className="dash-card">
+          <div className="dash-card" onClick={()=>navigate("/admin/products")}>
             <h2>{totalProducts}</h2>
             <p>Total Products</p>
           </div>
 
-          <div className="dash-card">
+          <div className="dash-card" onClick={()=>navigate("/admin/users")}>
             <h2>{totalUsers}</h2>
             <p>Total Users</p>
           </div>
 
-          <div className="dash-card">
+          <div className="dash-card" onClick={()=>navigate("/admin/orders")}>
             <h2>{totalOrders}</h2>
             <p>Total Orders</p>
           </div>
@@ -90,12 +76,12 @@ const Dashboard = () => {
             <p>Total Revenue</p>
           </div>
 
-          <div className="dash-card warning">
+          <div className="dash-card warning" onClick={()=>navigate("/admin/orders")}>
             <h2>{pendingOrders}</h2>
             <p>Pending Orders</p>
           </div>
 
-          <div className="dash-card warning">
+          <div className="dash-card warning" onClick={()=>navigate("/admin/feedback")}>
             <h2>{pendingFeedback}</h2>
             <p>Pending Feedback</p>
           </div>
@@ -105,11 +91,11 @@ const Dashboard = () => {
 {/* RECENT ORDERS */}
         <h2 className="recent-title">Recent Orders</h2>
 
-        <div className="recent-orders">
+        <div className="recent-orders" onClick={()=>navigate("/admin/orders")}>
           {orders.slice(0, 5).map((order, index) => (
             <div className="recent-item" key={index}>
               <p><strong>Order ID:</strong> {order.orderId}</p>
-              <p><strong>Status:</strong> {order.status}</p>
+              <p><strong>Status:</strong> {order.track}</p>
             </div>
           ))}
         </div>

@@ -1,96 +1,76 @@
-import React, { useEffect, useState } from "react";
-import "./Feedback.css";
+import { useEffect, useState } from "react";
 import { api } from "../../api/Axios";
-import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../Authentication/AuthContext";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import "./FeedBack.css"
 
-const Feedback = ({ setShowLogin }) => {
-  const navigate = useNavigate();
-  const { user } = useAuth();
-  const [feedbacks, setFeedbacks] = useState([]);
+const Feedback = ({setShowLogin}) => {
+  const navigate=useNavigate()
+  const [feedbacks,setFeedbacks] = useState([]);
+  const {user} = useAuth()
 
-  // Fetch ONLY approved feedbacks
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await api.get("/feedbacks?status=approved");
-        setFeedbacks(res.data);
-      } catch (error) {
-        console.log("Error:", error);
-      }
-    };
-    fetchData();
-  }, []);
+  useEffect(()=>{
+    const getFeedback=async()=>{
+      const res= await api.get("/feedbacks");
+      const approved = res.data.filter(
+        item=>item.feed==="approved"
+      )
+      setFeedbacks(approved)
+    }
+    getFeedback()
+  },[])
 
-  // Handle write review
-  const handleFeed = () => {
-    if (!user) {
+  const handleFeed=()=>{
+    if(!user){
       setShowLogin(true);
-      toast.warn("Please login to add review!");
+      toast.warn("Please login to give feedbacks !");
       return;
     }
-    navigate("/feedback");
-  };
+    navigate("/feedback")
+  }
 
-  // Average rating
-  const averageRating =
-    feedbacks.length > 0
-      ? (
-          feedbacks.reduce((sum, item) => sum + item.rating, 0) /
-          feedbacks.length
-        ).toFixed(1)
-      : 0;
-
+  const averageRating=feedbacks.length>0?(
+    feedbacks.reduce((total,item)=>total+item.rating,0)/feedbacks.length
+  ).toFixed(1)
+  :0;
+  
   return (
     <div className="feedback-container">
       <h2>Customer Reviews</h2>
-      <p>What our customers say about our products</p>
-
-      {/* Feedback Cards */}
+      <p>What our customers say about our producst</p>
       <div className="feedback-cards">
-        {feedbacks.map((item) => (
+        {feedbacks.map(item=>(
           <div key={item.id} className="feedback-card">
-            <div className="user-info">
-              <div className="user-avatar">{item.name?.[0]}</div>
-              <h4>{item.name}</h4>
-            </div>
-
-            <div className="stars">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <span
-                  key={star}
-                  className={star <= item.rating ? "star filled" : "star"}
-                >
-                  ★
-                </span>
-              ))}
-              <span className="rating-text">{item.rating}.0</span>
-            </div>
-
-            <p className="feedback-comment">"{item.comment}"</p>
+              <div className="user-info">
+                <div className="user-dp">{item.name?.[0]}</div>
+                <h4>{item.name}</h4>
+              </div>
+              <div className="stars">
+                {[1,2,3,4,5].map(star=>(
+                  <span key={star} className={star <= item.rating?"star filled":"star"}>★</span>
+                ))}
+                <span className="rating-text">{item.rating}.0</span>
+              </div>
+                <p className="feedback-review">
+                  "{item.review}"
+                </p>
           </div>
-        ))}
-      </div>
-
-      {/* Average Rating */}
-      <div className="average-rating">
-        <div className="rating-circle">
-          <span className="rating-number">{averageRating}</span>
-          <span className="rating-out-of">/5</span>
+        ))}</div>
+        <div className="average-rate">
+          <div className="rating-circle">
+            <span className="rating-number">{averageRating}</span>
+            <span className="rating-outOf">/5</span>
+          </div>
+          <div className="rating-info">
+            <h3>Overall Rating</h3>
+            <p>Based on {feedbacks.length} reviews</p>
+          </div>
         </div>
 
-        <div className="rating-info">
-          <h3>Overall Rating</h3>
-          <p>Based on {feedbacks.length} reviews</p>
-        </div>
-      </div>
-
-      <button className="write-review-btn" onClick={handleFeed}>
-        Write a Review
-      </button>
+        <button className="write-review" onClick={()=>handleFeed()}>Write a Review</button>
     </div>
-  );
-};
+  )
+}
 
-export default Feedback;
+export default Feedback

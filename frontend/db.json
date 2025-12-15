@@ -2,7 +2,7 @@
   "admin": [
     {
       "id": "1",
-      "email": "Admin@gmail.com",
+      "email": "sootika@gmail.com",
       "password": "Sootika123"
     }
   ],
@@ -17,7 +17,6 @@
       "cart": [],
       "wishlist": [],
       "orders": [],
-      "status": "active",
       "acc": "blocked"
     },
     {
@@ -36,8 +35,136 @@
       "email": "binshak07@gmail.com",
       "password": "binsha#07",
       "cpass": "binsha#07",
-      "acc": "active",
+      "acc": "blocked",
       "orders": []
+    },
+    {
+      "id": "b900",
+      "name": "rifna",
+      "number": 1234567890,
+      "email": "rifana@gmail.com",
+      "password": "rfffff",
+      "cpass": "rfffff",
+      "acc": "active",
+      "wishlist": [],
+      "cart": [],
+      "orders": [
+        {
+          "orderId": 1,
+          "date": "15/12/2025",
+          "track": "Shipped",
+          "items": [
+            {
+              "id": "3",
+              "title": "FULL KURTA",
+              "name": "flare | black | eiusmod",
+              "description": "A graceful flared kurta in elegant black, suitable for festive and casual wear.",
+              "image": "/products/top2.webp",
+              "price": 2599,
+              "catogory": "women",
+              "stock": true,
+              "quantity": 1
+            },
+            {
+              "id": "5",
+              "title": "KURTA",
+              "name": "Duis | aute | culpa",
+              "description": "A stylish kurta with a smooth finish and versatile design for everyday comfort.",
+              "image": "/products/top3.webp",
+              "sImage": "/products/top3_1.webp",
+              "price": 2599,
+              "catogory": "women",
+              "stock": true,
+              "quantity": 1
+            },
+            {
+              "id": "6",
+              "title": "LORUM",
+              "name": "blue | ipsum | dolor",
+              "description": "A premium blue top/shawl with a lightweight feel, perfect for layering in style.",
+              "image": "/products/shawlBl.webp",
+              "sImage": "/products/redshawl.webp",
+              "price": 1499,
+              "catogory": "women",
+              "stock": true,
+              "quantity": 1
+            },
+            {
+              "id": "10",
+              "title": "CLASSIC TREND SET",
+              "name": "fashion | comfy | chic",
+              "description": "A stylish and comfortable outfit perfect for daily wear with a modern touch.",
+              "image": "/products/shop3.webp",
+              "sImage": "/products/shop3_1.webp",
+              "price": 1299,
+              "catogory": "women",
+              "stock": true,
+              "quantity": 2
+            }
+          ],
+          "total": 9375
+        },
+        {
+          "orderId": 2,
+          "date": "15/12/2025",
+          "track": "Pending",
+          "items": [
+            {
+              "id": "3",
+              "title": "FULL KURTA",
+              "name": "flare | black | eiusmod",
+              "description": "A graceful flared kurta in elegant black, suitable for festive and casual wear.",
+              "image": "/products/top2.webp",
+              "price": 2599,
+              "catogory": "women",
+              "stock": true,
+              "quantity": 1
+            }
+          ],
+          "total": 2679
+        },
+        {
+          "orderId": 3,
+          "date": "15/12/2025",
+          "track": "Cancelled",
+          "items": [
+            {
+              "id": "8348",
+              "title": "Jeans",
+              "name": "kotty || straight fit",
+              "description": "nice jeans light blue smooth wearing",
+              "image": "/products/jean.webp",
+              "sImage": "",
+              "tImage": "",
+              "price": "1999",
+              "catogory": "unisex",
+              "stock": true,
+              "quantity": 1
+            }
+          ],
+          "total": 2079
+        },
+        {
+          "orderId": 4,
+          "date": "15/12/2025",
+          "track": "Pending",
+          "items": [
+            {
+              "id": "2",
+              "title": "SWEATER",
+              "name": "blue | fugi | quis",
+              "description": "A cozy blue sweater with soft texture and a comfortable fit, ideal for cool days.",
+              "image": "/products/blue.webp",
+              "sImage": "/products/brwn.webp",
+              "tImage": "/products/majandha.webp",
+              "price": 1599,
+              "stock": true,
+              "quantity": 2
+            }
+          ],
+          "total": 3278
+        }
+      ]
     }
   ],
   "products": [
@@ -47,8 +174,7 @@
       "name": "short | minim | veniam",
       "description": "A minimal and stylish top with a clean design, perfect for effortless everyday wear.",
       "image": "/products/top1.webp",
-      "price": 2999,
-      "catogory": "women",
+      "price": "2499",
       "stock": true
     },
     {
@@ -60,7 +186,6 @@
       "sImage": "/products/brwn.webp",
       "tImage": "/products/majandha.webp",
       "price": 1599,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -70,7 +195,6 @@
       "description": "A graceful flared kurta in elegant black, suitable for festive and casual wear.",
       "image": "/products/top2.webp",
       "price": 2599,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -82,7 +206,6 @@
       "sImage": "/products/lightgrnSari.webp",
       "tImage": "/products/grnSari.webp",
       "price": 1099,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -93,7 +216,6 @@
       "image": "/products/top3.webp",
       "sImage": "/products/top3_1.webp",
       "price": 2599,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -104,7 +226,6 @@
       "image": "/products/shawlBl.webp",
       "sImage": "/products/redshawl.webp",
       "price": 1499,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -115,7 +236,6 @@
       "image": "/products/top4.webp",
       "sImage": "/products/top4_1.webp",
       "price": 2299,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -127,7 +247,6 @@
       "sImage": "/products/theyyam_r.webp",
       "tImage": "/products/theyyam_y.webp",
       "price": 1499,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -138,7 +257,6 @@
       "image": "/products/shop2.webp",
       "sImage": "/products/shop2_1.webp",
       "price": 1999,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -149,7 +267,6 @@
       "image": "/products/shop3.webp",
       "sImage": "/products/shop3_1.webp",
       "price": 1299,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -160,7 +277,6 @@
       "image": "/products/shop4.webp",
       "sImage": "/products/shop4_1.webp",
       "price": 1399,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -171,7 +287,6 @@
       "image": "/products/shop5.webp",
       "sImage": "/products/shop5_1.webp",
       "price": 1199,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -182,7 +297,6 @@
       "image": "/products/shop6_1.webp",
       "sImage": "/products/shop6.webp",
       "price": 1499,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -193,7 +307,6 @@
       "image": "/products/shop7.webp",
       "sImage": "/products/shop7_1.webp",
       "price": 1299,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -204,7 +317,6 @@
       "image": "/products/shop8.webp",
       "sImage": "/products/shop8_1.webp",
       "price": 1399,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -215,7 +327,6 @@
       "image": "/products/shop9.webp",
       "sImage": "/products/shop9_1.webp",
       "price": 1199,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -226,7 +337,6 @@
       "image": "/products/shop10.webp",
       "sImage": "/products/shop10_1.webp",
       "price": 1499,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -237,7 +347,6 @@
       "image": "/products/shop11.webp",
       "sImage": "/products/shop11_1.webp",
       "price": 1599,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -249,7 +358,6 @@
       "sImage": "/products/stripsV.webp",
       "tImage": "/products/stripsG.webp",
       "price": 999,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -261,7 +369,6 @@
       "sImage": "/products/redpatrnsari.webp",
       "tImage": "/products/meroonshawl.webp",
       "price": 1799,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -272,7 +379,6 @@
       "image": "/products/shop12.webp",
       "sImage": "/products/shop12_1.webp",
       "price": 1399,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -282,7 +388,6 @@
       "description": "A soft and breathable top crafted for everyday comfort with a smooth modern silhouette.",
       "image": "/products/shop13.webp",
       "price": 1299,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -294,7 +399,6 @@
       "sImage": "/products/shop14_1.webp",
       "tImage": "/products/shop14_2.webp",
       "price": 1799,
-      "catogory": "women",
       "stock": true
     },
     {
@@ -305,26 +409,26 @@
       "image": "/products/shop15.webp",
       "sImage": "/products/shop15_1.webp",
       "price": 1399,
-      "catogory": "women",
+      "stock": false
+    },
+    {
+      "id": "8348",
+      "title": "Jeans",
+      "name": "kotty || straight fit",
+      "description": "nice jeans light blue smooth wearing",
+      "image": "/products/jean.webp",
+      "sImage": "",
+      "tImage": "",
+      "price": "1999",
       "stock": true
     }
   ],
   "feedbacks": [
     {
-      "id": "5aca",
+      "id": "c61b",
       "name": "shabin",
-      "rating": 3,
-      "review": "nice product",
-      "product": "General",
-      "date": "Just now",
-      "feed": "approved"
-    },
-    {
-      "id": "21a4",
-      "name": "rifana sherin",
       "rating": 5,
-      "review": "good product and the cloth is so soft and also the delivery agent behaviour is good👍👍👍",
-      "product": "General",
+      "review": "nice product bro",
       "feed": "approved"
     }
   ]

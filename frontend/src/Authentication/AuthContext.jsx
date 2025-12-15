@@ -26,20 +26,20 @@ export const AuthProvider = (props) => {
   useEffect(() => {
     if (!user) return;
 
-    const checkUserStatus = async () => {
+    const checkUserAcc = async () => {
       try {
         const res = await api.get(`/users/${user.id}`);
 
-        if (res.data.status === "blocked") {
+        if (res.data.acc === "blocked") {
           toast.error("Your account has been blocked by admin");
           logout();
         }
       } catch (err) {
-        console.log("Status check failed");
+        console.log("acc check failed");
       }
     };
  
-    const interval = setInterval(checkUserStatus, 5000);
+    const interval = setInterval(checkUserAcc, 5000);
 
     return () => clearInterval(interval);
   }, [user]);
@@ -74,7 +74,7 @@ export const AuthProvider = (props) => {
         return false;
       }
  
-      if (userData.status === "blocked") {
+      if (userData.acc === "blocked") {
         toast.error("Your account is blocked!");
         return false;
       }
@@ -111,10 +111,10 @@ export const AuthProvider = (props) => {
         return false;
       }
 
-      // default status
+      // default acc
       const res = await api.post("/users", {
         ...newUser,
-        status: "active",
+        acc: "active",
       });
 
       setUser(res.data);

@@ -87,7 +87,7 @@ const CartContextProvider = (props) => {
   await updateUserData({ cart: [] });  
 };
 
-  //WISHLIST 
+  //wish 
   const addToWish = async (item) => {
     if (!user) {
       toast.warn("Please login to add items");

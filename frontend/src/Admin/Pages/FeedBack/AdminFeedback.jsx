@@ -12,17 +12,17 @@ const AdminFeedback = () => {
     .then(res=>setFeedbacks(res.data))
     .catch(err=>console.log(err))
   },[])
+
 const approve= async(id)=>{
-  await api.patch(`/feedbacks${id}`,{feed:"approved"})
-  setFeedbacks((prev)=>(
-    prev((item)=>(
-      item.id===id?{...item,feed:"approved"}:item
-    ))
-  ))
+  await api.patch(`/feedbacks/${id}`,{feed:"approved"})
+
+  setFeedbacks(prev=>prev.map(item=>(
+    item.id===id?{...item, feed:"approved"}:item
+  )))
 }
 
   const deleteFeed = async(id)=>{
-    const sure=Window.prompt("Are u sure want to delete this ?")
+    const sure=window.confirm("Are u sure want to delete this ?")
     if(!sure) return;
 
     await api.delete(`/feedbacks/${id}`)
@@ -44,7 +44,7 @@ const approve= async(id)=>{
                   <th>User</th>
                   <th>Feedback</th>
                   <th>Rating</th>
-                  <th>Show</th>
+                  <th>Display</th>
                 </tr>
               </thead>
               <tbody>
@@ -54,7 +54,7 @@ const approve= async(id)=>{
                     <td>{item.review}</td>
                     <td>{item.rating} ★</td>
                     <td>
-                      <button className="ys-btn" onClick={()=>approve(item.id)} disabled={item.feed == "approved"}>{item.feed=="approved" ? "approved":""}</button>
+                      <button className="ys-btn" onClick={()=>approve(item.id)} disabled={item.feed === "approved"}>{item.feed=="approved" ? "Approved":"Approve"}</button>
                       <button className="dlt-btn" onClick={()=>deleteFeed(item.id)}>Delete</button>
                     </td>
                   </tr>

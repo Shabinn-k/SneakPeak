@@ -5,7 +5,7 @@ import { useAuth } from "../../Authentication/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const Orders = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const { user } = useAuth();
   const [orders, setOrders] = useState([]);
@@ -21,20 +21,21 @@ const Orders = () => {
       .catch((err) => console.log(err));
   }, [user]);
 
-  // Order status colors
-  const getStatusColor = (status) => {
-    switch (status) {
+  // Order track colors
+  const getTrackColor = (track) => {
+    switch (track) {
       case "Pending": return "pending";
       case "Shipped": return "shipped";
-      case "Out for Delivery": return "out";
       case "Delivered": return "delivered";
+      case "Cancelled": return "cancelled";
       default: return "";
     }
   };
 
+
   return (
     <div className="orders-page">
-            <button onClick={()=>navigate("/")}>Go Home</button>
+      <button onClick={() => navigate("/")}>Go Home</button>
       <h2 className="orders-title">My Orders</h2>
 
       {orders.length === 0 ? (
@@ -42,12 +43,13 @@ const Orders = () => {
       ) : (
         orders.map((order) => (
           <div className="order-card" key={order.orderId}>
-            
+
             <div className="order-header">
-              <h3><h3>Order {order.orderId}</h3></h3>
-              <span className={`order-status ${getStatusColor(order.status)}`}>
-                {order.status}
+              <h3><h3>Order #{order.orderId}</h3></h3>
+              <span className={`order-track ${getTrackColor(order.track)}`}>
+                {order.track}
               </span>
+
             </div>
 
             <p className="order-date">{order.date}</p>

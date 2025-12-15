@@ -16,6 +16,7 @@ import AddProduct from "./Admin/Pages/ProductMng/AddProducts.jsx";
 import EditProduct from "./Admin/Pages/ProductMng/EditProducts.jsx";
 import UserDetail from "./Admin/Pages/UserMng/UserDetail.jsx";
 import AdminFeedback from "./Admin/Pages/FeedBack/AdminFeedback.jsx";
+import OrderDet from "./Admin/Pages/OrderMng/AdminOrders.jsx";
 
 const Cart = lazy(() => import("./pages/Cart/Cart.jsx"));
 const Wishlist = lazy(() => import("./pages/Wishlist/Wishlist.jsx"));
@@ -43,10 +44,10 @@ const MainRouter = () => {
           <Route path="/about" element={<About />} />
           <Route path="/detail/:id" element={<Detail />} />
           <Route path="/payment" element={<Payment />} />
-          <Route path="/feedback" element={<WriteFeed />} />
+          <Route path="/feedback" element={<WriteFeed/>}/>
           <Route path="/myOrders" element={<Orders />} />
 
-        
+       
           <Route path="/admin/dashboard"
             element={
               <AdminProtected>
@@ -95,6 +96,12 @@ const MainRouter = () => {
                 <AdminFeedback/>
               </AdminProtected>
             }/>
+            <Route path="/admin/orders" element={
+  <AdminProtected>
+    <OrderDet />
+  </AdminProtected>
+} />
+
  
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/404" />} />

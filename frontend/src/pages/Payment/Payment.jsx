@@ -44,7 +44,7 @@ const Payment = () => {
       const newOrder = {
         orderId: (user.orders?.length || 0) + 1,
         date: new Date().toLocaleDateString(),
-        status: "Pending",
+        track: "Pending",
         items: buyNowItem,
         total: total,
       };

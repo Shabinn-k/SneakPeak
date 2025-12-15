@@ -24,8 +24,7 @@ const Cart = () => {
 
             <div className="cart-info">
               <h3>{item.title}</h3>
-              <h2>{item.name}</h2>
-              <p>{item.catogory}</p>
+              <h2>{item.name}</h2> 
               <span>₹ {item.price}</span>
             </div>
 

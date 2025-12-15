@@ -1,69 +1,55 @@
-import React, { useState } from "react";
-import { toast } from "react-toastify";
-import "./WriteFeed.css";
+import { useState } from "react";
 import { api } from "../../api/Axios";
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import "./WriteFeed.css";
 import { useAuth } from "../../Authentication/AuthContext";
 
 const WriteFeed = () => {
-  const { user } = useAuth();
-  const navigate = useNavigate();
+  const navigate=useNavigate();
+  const {user}=useAuth()
+  const [rating,setRating]=useState(0);
+  const [review,setReview]=useState("");
 
-  const [rating, setRating] = useState(0);
-  const [review, setreview] = useState("");
-
-  const handleSubmit = async (e) => {
+  const handleSubmit=async(e)=>{
     e.preventDefault();
 
-    if (!rating || !review) {
-      toast.error("All fields are required!");
-      return;
+    if(rating===0 || review===""){
+      toast.error("Please give rating and review")
+      return
     }
 
-    //   ALWAYS pending first
-    const feedback = {
-      name: user?.name || "",
-      rating,
-      review,
-      feed: "pending"   
-    };
-
-    try {
-      await api.post("/feedbacks", feedback);
-      toast.success("Feedback sent for admin approval!");
-      navigate("/");
-    } catch (err) {
-      toast.error("Something went wrong!");
+    const feedbackData={
+      name:user.name,
+      rating:rating,
+      review:review,
+      feed:"pending"
     }
-  };
-
+      await api.post("/feedbacks",feedbackData)
+      toast.success("Thankyou !")
+      navigate("/")
+  }
   return (
     <div className="writefeed-container">
-      <form onSubmit={handleSubmit} className="writefeed-form">
+      <form className="writefeed-form" onSubmit={handleSubmit}>
         <h2>Write a Review</h2>
 
         <div className="rating-stars">
-          {[1, 2, 3, 4, 5].map(star => (
-            <span
-              key={star}
-              className={star <= rating ? "star filled" : "star"}
-              onClick={() => setRating(star)}
-            >
-              ★
-            </span>
-          ))}
+      {[1,2,3,4,5].map((star)=>(
+        <span key={star} className={star <=rating?"star filled" :"star"}
+         onClick={()=>setRating(star)}>★</span>
+      ))}
         </div>
 
-        <textarea
-          placeholder="Write your feedback..."
-          value={review}
-          onChange={(e) => setreview(e.target.value)}
-        />
+        <textarea placeholder="write your feedback..." value={review}
+        onChange={(e)=>setReview(e.target.value)} />
 
         <button type="submit">Submit</button>
       </form>
     </div>
-  );
-};
 
-export default WriteFeed;
+    
+  )
+}
+
+export default WriteFeed
